@@ -142,9 +142,10 @@
  div h2{
     font-size: clamp(14px,2vw,22px);
  }
- div ul li{
+ footer div ul li{
     list-style: none;
     color: var(--white-text);
+    margin-bottom: 10px;
  }
  .footer-img{
     display: grid;

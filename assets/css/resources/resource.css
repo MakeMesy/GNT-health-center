@@ -6,7 +6,7 @@
     --background-color: #0b2231;
     --secondary-color: #FF8B00;
     --text-color: #1a2935;
-    --bglight-color: rgba(77, 174, 74, 0.596);
+    --bglight-color: rgba(77, 174, 74, 0.4);
     --white:#fff;
     --white-text:#acacac;
 
@@ -51,7 +51,7 @@
   }
   a,a:focus,a:hover{
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--white-text);
   }
 
 
