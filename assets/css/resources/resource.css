@@ -3,10 +3,12 @@
 
 :root {
     --primary-color: #4EAE4A;
-    --background-color: #071A27;
+    --background-color: #0b2231;
     --secondary-color: #FF8B00;
-    --text-color: #223645;
+    --text-color: #1a2935;
     --bglight-color: rgba(77, 174, 74, 0.596);
+    --white:#fff;
+    --white-text:#acacac;
 
   }
 
@@ -53,5 +55,4 @@
   }
 
 
-  /* navbar-1 */
-  
+ 
