@@ -19,7 +19,7 @@ header::before{
 }
 header h2{
     z-index: 2;
-    color: white;
+    color: var(--white);
     font-size:clamp(48px,5vw,58px) ;
     font-weight: 800;
 }
@@ -90,10 +90,11 @@ header h2{
     background: var(--bglight-color);
     width: fit-content;
     color: var(--primary-color);
-    padding: 2px 8px;
+    padding: 4px 18px;
     border-radius: 3px;
     font-size: clamp(14px,2vw,18px);
-    font-weight:bold;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
 
 }
 .about-main-content h2:nth-child(2){

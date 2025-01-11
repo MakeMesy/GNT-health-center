@@ -52,4 +52,8 @@
            
         </div>
     </footer>
+   
 </div>
+<div class="copy-right">
+        <p>&copy;  <span><?php echo date('Y') ?></span>  <a href=""><?php echo $name ?></a> All Rights Reserved <br>Design and developed by <a href="">Mark Xplore</a></p>
+    </div>

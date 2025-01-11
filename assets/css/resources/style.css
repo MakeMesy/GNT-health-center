@@ -68,14 +68,16 @@
 
  }
 
- nav div ul li {
+ nav div ul li  {
      display: inline-block;
      margin-right: 1rem;
-     color: var(--text-color);
      font-size: clamp(14px, 2vw, 18px);
      font-weight: 700;
  }
 
+ nav div ul li a{
+    color: var(--text-color);
+ }
  nav div:nth-child(3) {
      padding: 2px;
      border: 1px solid var(--primary-color);
@@ -142,7 +144,7 @@
  div h2{
     font-size: clamp(14px,2vw,22px);
  }
- footer div ul li{
+ .footer div ul li{
     list-style: none;
     color: var(--white-text);
     margin-bottom: 10px;
@@ -186,3 +188,16 @@ margin: 2px;
  .footer-detail .footer-content span, .footer-detail .footer-content a {
     color: var(--white-text);
  } 
+
+ .copy-right{
+    width: 100%;
+    background: var(--background-color);
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: var(--white);
+ }
+ .copy-right p a{
+    color: var(--primary-color);
+ }
