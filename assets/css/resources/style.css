@@ -78,6 +78,10 @@
  nav div ul li a{
     color: var(--text-color);
  }
+ nav div ul li a:hover{
+    color: var( --primary-color);
+
+ }
  nav div:nth-child(3) {
      padding: 2px;
      border: 1px solid var(--primary-color);

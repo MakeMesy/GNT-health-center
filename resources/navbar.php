@@ -29,8 +29,8 @@
         </div>
         <div>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="./">Home</a></li>
+                <li><a href="./about.php">About</a></li>
                 <li><a href="">Treatments</a></li>
                 <li><a href="">Gallery</a></li>
             </ul>

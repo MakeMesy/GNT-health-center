@@ -87,14 +87,104 @@ include('./resources/conn.php')
 </section>
 
 
+<!-- Goals-->
+
+<section id="goals">
+  <div class="goals-main">
+    <div class="goal-main-head">
+      
+<div class="goal-icon">
+      <img src="./assets/img/main/favicon.png" alt="" width="100px">
+  </div>
+  <div class="goal-heading">
+  <h2>
+    OUR GOALS
+  </h2>
+  <h2>
+  We Have An Great Plan <br>
+  For The Next Generation
+  </h2>
+  </div>
+    </div>
+  <div class="goal-content">
+    <div class="goal-item">
+      <div class="goal-item-img">
+        <img src="./assets/img/about/Healthier.jpg" alt="" width="280px" height="280px">
+      </div>
+      <div class="goal-item-content">
+      <div class="goal-item-head">
+        <h2>
+        Shaping a Healthier Tomorrow
+        </h2>
+      </div>
+      <div class="goal-content">
+        <p>
+        We combine traditional wisdom with modern techniques to build a healthier future for all.
+        </p>
+      </div>
+      <div class="goal-item-btn">
+       <span>
+        Read More
+       </span>
+      </div>
+      </div>
+    </div>
+    <div class="goal-item">
+      <div class="goal-item-img">
+      <img src="./assets/img/about/wellness.jpg" alt="" width="280px" height="280px">
+      </div>
+      <div class="goal-item-content">
+      <div class="goal-item-head">
+        <h2>
+        Advancing Natural <br> Wellness
+        </h2>
+      </div>
+      <div class="goal-content">
+        <p>
+
+        We focus on making holistic therapies more accessible and effective for future generations.
+            </p>
+      </div>
+      <div class="goal-item-btn">
+       <span>
+        Read More
+       </span>
+      </div>
+      </div>
+    </div>
+    <div class="goal-item">
+      <div class="goal-item-img">
+      <img src="./assets/img/about/item3.jpg" alt="" width="280px" height="280px">
+      </div>
+     <div class="goal-item-content">
+     <div class="goal-item-head">
+        <h2>
+        Sustainable Health 
+       <br> Practices
+        </h2>
+      </div>
+      <div class="goal-content">
+        <p>
+        We’re dedicated to eco-friendly wellness solutions that benefit both people and the planet.        </p>
+      </div>
+      <div class="goal-item-btn">
+       <span>
+        Read More
+       </span>
+      </div>
+    </div>
+     </div>
+  </div>
+  </div>
+</section>
+
 
 
 
 
 
 <!-- footer -->
-<?php include('./resources/footer.php') ?>
-
+<?php //include('./resources/footer.php') ?>
 
 
 <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
