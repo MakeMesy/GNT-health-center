@@ -1,0 +1,84 @@
+@import url(../resources/resource.css);
+
+/* hero section */
+header {
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--bglight-color);
+
+}
+
+header h2 {
+    z-index: 2;
+    color: var(--white);
+    font-size: clamp(48px, 5vw, 58px);
+    font-weight: 800;
+}
+
+/* contact details content */
+#contact-detail {
+    padding: 20px;
+    margin: 3rem 0px;
+}
+
+.contact-content {
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3rem;
+
+}
+
+.content-con-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    gap: 1rem;
+    padding: 2rem;
+    border: 1px solid var(--white-text);
+    border-radius: 4px;
+    height: 320px;
+    align-items: start;
+    padding-left: 2rem;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.content-con-item h2 {
+    font-weight: bold;
+}
+
+.content-con-item a,
+.content-con-item p {
+    color: var(--text-color);
+}
+
+.content-con-item img {
+    width: 120px;
+}
+/* map */
+iframe{
+    width: 100%;
+    height: 70vh;
+}
+
+@media screen and (max-width:768px) {
+    .contact-content{
+        flex-wrap: wrap;
+    }
+}

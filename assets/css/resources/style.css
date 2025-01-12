@@ -225,6 +225,7 @@ margin: 2px;
     padding: 10px;
  }
 
+/* contact form */
 
 
 
@@ -263,7 +264,6 @@ margin: 2px;
       width: 100%;
       display: none;
       transition: max-height 0.4s ease;
-   
 
     }
     .mobile-navigation.show {
