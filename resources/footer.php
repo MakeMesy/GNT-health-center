@@ -1,3 +1,13 @@
+<div class="top-footer">
+    <div class="top-footer-con">
+          <img src="./assets/img/footer/body.png" alt="" width="140px">
+          <img src="./assets/img/footer/headmassage.png" alt="" width="140px">
+          <img src="./assets/img/footer/cuppingfacial.png" alt="" width="140px">
+          <img src="./assets/img/footer/foot.png" alt="" width="140px">
+          <img src="./assets/img/footer/head.png" alt="" width="140px">
+    </div>
+</div>
+
 <div class="footer">
     <footer>
         <div class="footer-about">
