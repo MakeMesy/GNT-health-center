@@ -61,8 +61,7 @@ include('./resources/conn.php')
     </div>
 </section>
 
-
-<!-- map -->
+ <!-- map -->
 
 <section id="map-main">
 <iframe
@@ -71,7 +70,7 @@ include('./resources/conn.php')
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-</section>
+</section> 
 
 
 <?php include('./resources/form.php') ?>
