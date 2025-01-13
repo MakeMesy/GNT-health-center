@@ -31,14 +31,17 @@
             <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./about.php">About</a></li>
+                <li><a href="">Services</a></li>
                 <li><a href="">Treatments</a></li>
-                <li><a href="">Gallery</a></li>
+                <li><a href="./gallery.php">Gallery</a></li>
             </ul>
         </div>
         <div class="nav-btn">
+            <a href="./contact.php">
             <button>
                 Contact
             </button>
+            </a>
         </div>
         <div class="nav-switch" style="z-index: 1999">
     <div class="nav-toggle" >

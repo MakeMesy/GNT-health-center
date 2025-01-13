@@ -328,6 +328,31 @@ form{
    border-radius: 3px;
 }
 
+/* hero section */
+header {
+   height: 80vh;
+   width: 100%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+header::before {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: var(--bglight-color);
+
+}
+
+header h2 {
+   z-index: 2;
+   color: var(--white);
+   font-size: clamp(48px, 5vw, 58px);
+   font-weight: 800;
+}
  @media screen and (max-width:768px) {
     footer{
         flex-direction: column;

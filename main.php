@@ -18,12 +18,11 @@ include('./resources/conn.php')
   
   <!-- custom css -->
    <link rel="stylesheet" href="./assets/css/resources/resource.css">
+   <link rel="stylesheet" href="./assets/css/resources/style.css">
 
 
 </head>
 <body>
-
-
 
 <!-- navbar -->
 
@@ -36,10 +35,13 @@ include('./resources/conn.php')
 
 
 
+<!-- footer -->
+<?php include('./resources/footer.php') ?>
 
 
 
-
-<script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
+<!-- custom scripts -->
+<script src="./assets/js/resource/script.js"></script>
+  <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
 </body>
 </html>

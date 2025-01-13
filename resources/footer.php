@@ -38,13 +38,13 @@
         </div>
         <div >
             <h2>Pictures</h2>
-            <div class="footer-img">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/center/img1.jpg" alt="" width="100px" height="80px">
+            <div class="footer-img">  
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
             </div>
         </div>
         <div class="footer-detail">
