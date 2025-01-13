@@ -58,20 +58,48 @@ include('./resources/conn.php')
       </p>
     </div>
     <div class="place-images">
-    <img src="./assets/img/footer/img1.jpg" alt="" >
-            <img src="./assets/img/footer/img1.jpg" alt="" >
-            <img src="./assets/img/footer/img1.jpg" alt="" >
-            <img src="./assets/img/footer/img1.jpg" alt="" >
-            <img src="./assets/img/footer/img1.jpg" alt="" >
-            <img src="./assets/img/footer/img1.jpg" alt="" >
+    <img src="./assets/img/gallery/img1.jpg" alt="" >
+            <img src="./assets/img/gallery/img2.jpg" alt="" >
+            <img src="./assets/img/gallery/img3.jpg" alt="" >
+            <img src="./assets/img/gallery/img4.jpg" alt="" >
+            <img src="./assets/img/gallery/img5.jpg" alt="" >
+            <img src="./assets/img/gallery/img6.jpg" alt="" >
          
     </div>
     </div>
   </section>
 
 
+  <section id="place-images" style="background: none;" >
+  <div class="place-site-icon-1" id="place-site-icon-1">
+        <img src="./assets/img/main/favicon.png" alt="">
+      </div>
+      <div class="place-site-icon-2" id="place-site-icon-2">
+        <img src="./assets/img/gallery/leaf.png" alt="">
+      </div>
+    <div class="place-image-main" id="place-img-main">
+    <div class="place-images" style="background: var(--bglight-color);">
+    <img src="./assets/img/gallery/needle.svg" alt="" >
+            <img src="./assets/img/gallery/accu.webp" alt="" >
+            <img src="./assets/img/gallery/ayur.webp" alt="" >
+            <img src="./assets/img/gallery/cupping.jpeg" alt="" >
+            <img src="./assets/img/gallery/flower.webp" alt="" >
+            <img src="./assets/img/gallery/gusa.jpeg" alt="" >
+         
+    </div>
+    <div class="place-image-content">
+      <h2>Acupuncture Tools</h2>
+      <p>
+      Fine, sterile needles are carefully used to target specific energy points, promoting healing and restoring balance. Additional tools like heat lamps and cups may complement the treatment for enhanced results.      </p>
+      <p>
+      Herbal oils, medicinal powders, and natural remedies form the core of Ayurveda, supported by specialized massage tools and therapeutic equipment to rejuvenate and detoxify the body.      </p>
+    </div>
+   
+    </div>
+  </section>
 
 
+<!-- main gallery -->
 
 
   <!-- footer -->

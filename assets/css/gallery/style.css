@@ -81,6 +81,23 @@
   text-align: justify;
 
 }
+.place-site-icon-1{
+  position: absolute;
+  left: 10.5%;
+  top: 14%;
+  width: 80px;
+}
+
+.place-image-content:nth-child(2){
+  flex-basis: 70%;
+}
+#place-site-icon-1{
+  transform: rotateY(180deg);
+}
+#place-site-icon-2{
+  right: 7%;
+  transform: rotateY(180deg);
+}
 
 
 
@@ -88,6 +105,9 @@
   .place-image-main{
     flex-direction: column;
     height: fit-content;
+  }
+  #place-img-main{
+    flex-direction:column-reverse;
   }
   .place-images{
   grid-template-columns: repeat(1,1fr);
@@ -104,4 +124,8 @@
     left: 0;
     top: 20%;
   }
+.place-site-icon-1{
+  top: 26%;
+  left: 2%;
+}
 }
