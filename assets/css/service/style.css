@@ -1,0 +1,156 @@
+@import url(../resources/resource.css);
+
+
+.treatments {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+#section-1{
+    height: 786px;
+}
+
+#treatments {
+    background: var(--bglight-color);
+    height: 70vh;
+    padding: 2rem;
+    padding-top: 3rem;
+    position: relative;
+}
+
+.treatments-content {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.treatments-content-heading {
+    width: 100%;
+}
+
+.treatments-slider {
+    margin-top: 3rem;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 190px;
+    transition: transform 0.3s ease-in-out;
+}
+.slide-image{
+    position: relative;
+    transition: 0.3s;
+}
+.slide-image::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bglight-color);
+}
+.swiper-slide {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    background: #fff;
+    height: 410px;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.1);
+}
+
+.slide-content {
+    padding: 2rem;
+}
+
+.slide-content p {
+    min-height: 75px;
+    font-size: clamp(9px, 1.5vw, 17px);
+    text-align: justify;
+}
+
+.slide-content h3 {
+    font-size: clamp(12px, 1.5vw, 20px);
+    font-weight: 700;
+}
+
+.slide-content button {
+    border: none;
+    background: none;
+    width: fit-content;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.treatments-content-heading h4 {
+    font-size: clamp(12px, 2vw, 17px);
+    text-transform: uppercase;
+    color: var(--white-text);
+    font-weight: 700;
+
+}
+
+.treatments-content-heading h2 {
+    font-size: clamp(28px, 2.2vw, 38px);
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+.treatments-con p {
+    line-height: 2rem;
+    text-align: justify;
+    font-size: clamp(15px, 1.5vw, 17px);
+
+}
+
+#swiper-button-next,
+#swiper-button-prev {
+    position: absolute;
+    top: 90%;
+}
+
+#swiper-button-next button,
+#swiper-button-prev button {
+    background: var(--bglight-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: clamp(15px, 2vw, 18px);
+    outline: none;
+    color: var(--primary-color);
+}
+
+#swiper-button-next button:hover,
+#swiper-button-prev button:hover {
+    border: 3px solid var(--primary-color);
+}
+
+#swiper-button-next {
+    right: 6%;
+}
+
+#swiper-button-prev {
+    left: 6%;
+}
+
+
+/* therapy slider */
+.therapy{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.myswiper-slide{
+  height: 80px;
+}

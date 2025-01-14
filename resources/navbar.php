@@ -31,7 +31,7 @@
             <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./about.php">About</a></li>
-                <li><a href="">Services</a></li>
+                <li><a href="./service.php">Services</a></li>
                 <li><a href="">Treatments</a></li>
                 <li><a href="./gallery.php">Gallery</a></li>
             </ul>
