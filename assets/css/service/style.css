@@ -70,7 +70,7 @@
     padding: 2rem;
 }
 
-.slide-content p {
+.slide-content p,.therapy-content p {
     min-height: 75px;
     font-size: clamp(9px, 1.5vw, 17px);
     text-align: justify;
@@ -89,7 +89,7 @@
     font-weight: 700;
 }
 
-.treatments-content-heading h4 {
+.treatments-content-heading h4, .therapy-heading h4{
     font-size: clamp(12px, 2vw, 17px);
     text-transform: uppercase;
     color: var(--white-text);
@@ -97,7 +97,7 @@
 
 }
 
-.treatments-content-heading h2 {
+.treatments-content-heading h2,.therapy-heading h2 {
     font-size: clamp(28px, 2.2vw, 38px);
     font-weight: 800;
     margin-top: 1rem;
@@ -152,5 +152,30 @@
     margin: 0 auto;
 }
 .myswiper-slide{
-  height: 80px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color);
+  color: var(--white);
+}
+.myswiper-slide h3{
+    font-size: clamp(12px,2vw,18px);
+}
+.myswiper-slide img{
+    background: var(--primary-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+.therapy-heading{
+    width: 100%;
+}
+.therapy-slider{
+    margin-top: 2rem;
 }

@@ -185,7 +185,7 @@ include('./resources/conn.php')
 <!-- Therapy -->
  <section id="therapy">
     <div class="therapy">
-        <div class="therapy-content">
+        <div class="therapy-content d-flex">
             <div class="therapy-heading">
                 <h4>WHAT WE DO</h4>
                  <h2>Therapies Offered</h2>
@@ -200,19 +200,19 @@ include('./resources/conn.php')
         <div class="swiper mySwiper2">
   <div class="swiper-wrapper">
     <div class="swiper-slide myswiper-slide dorn-therapy">
-        <img src="images/dorn-therapy.jpg" alt="Dorn Therapy">
+        <img src="./assets/img/therapy/done.png" alt="Dorn Therapy">
         <h3>Dorn Therapy</h3>
     </div>
     <div class="swiper-slide myswiper-slide acupuncture">
-        <img src="images/acupuncture.jpg" alt="Acupuncture">
+        <img src="./assets/img/therapy/acupuncture-needles.png" alt="Acupuncture">
         <h3>Acupuncture</h3>
     </div>
     <div class="swiper-slide myswiper-slide massage">
-        <img src="images/massage.jpg" alt="Massage">
+        <img src="./assets/img/therapy/massage.png" alt="Massage">
         <h3>Massage</h3>
     </div>
     <div class="swiper-slide myswiper-slide paadha-gusa">
-        <img src="images/paadha-gusa.jpg" alt="Paadha Gusa">
+        <img src="./assets/img/therapy/paadha-gusa.png" alt="Paadha Gusa">
         <h3>Paadha Gusa</h3>
     </div>
     <div class="swiper-slide myswiper-slide wetpack">
