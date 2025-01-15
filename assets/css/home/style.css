@@ -1,0 +1,125 @@
+@import url(../resources/resource.css);
+
+
+/* hero section */
+
+.swiper-slide{
+    position: relative;
+    height: 80vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.swiper-slide::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #1a293598;
+}
+
+.slider-content{
+    z-index: 2;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+.slider-content h2{
+    font-size: clamp(30px,4vw,58px);
+    font-weight: 700;
+    color: var(--white);
+    width: 70%;
+}
+.slider-content p{
+    font-size: clamp(20px,2vw,22px);
+    font-weight: 700;
+    color: var(--white);
+    width: 70%;
+}
+.hero-slider-btn:nth-child(even){
+    border: 1px solid var(--primary-color);
+    padding: 2px;
+    width: fit-content;
+}
+.hero-slider-btn:nth-child(even) button{
+    padding: 6px 8px;
+    background: var(--primary-color);
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+
+}
+.hero-slider-btn:nth-child(odd){
+    border: 1px solid var(--secondary-color);
+    padding: 2px;
+    width: fit-content;
+}
+.hero-slider-btn:nth-child(odd) button{
+    padding: 6px 8px;
+    background: var(--secondary-color);
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+
+}
+.swiper-button-next, .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:3px solid var(--primary-color);
+  }
+  .swiper-button-next:hover, .swiper-button-prev:hover{
+    border:3px solid var(--secondary-color);
+
+  }
+  
+  .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 20px;
+    color: var(--white);
+  }
+  .swiper-button-next, .swiper-button-prev{
+    background: url(../../img/home/navigation.png) no-repeat center/cover;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width:768px) {
+    .swiper-button-next, .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+    .slider-content{
+        text-align: center;
+    }
+    .slider-content p,.slider-content h2{
+      width: 70%;
+      max-width: 280px;
+      margin: 0 auto;
+      font-weight: 600;
+    }
+
+    .hero-slider-btn{
+        max-width: 280px;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+  }
