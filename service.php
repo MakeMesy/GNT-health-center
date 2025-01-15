@@ -277,22 +277,59 @@ include('./resources/conn.php')
   </section>
 
 
-<!-- QUOTE -->
- <div id="quote-main-section" >
-  <div class="quote-main">
-    <div>
-    <h2>Heal naturally, live fully</h2>
-    <h4>Don't Hesitate To Contact With Us</h4>
-    </div>
-    <div>
-      <div class="quote-btn"><button>
-     Book Now  <i class="fa-solid fa-arrow-right"></i>
-      </button></div>
+  <!-- QUOTE -->
+  <div id="quote-main-section">
+    <div class="quote-main">
+      <div>
+        <h2>Heal naturally, live fully</h2>
+        <h4>Don't Hesitate To Contact With Us</h4>
+      </div>
+      <div>
+        <div class="quote-btn"><button>
+            Book Now <i class="fa-solid fa-arrow-right"></i>
+          </button></div>
+      </div>
     </div>
   </div>
- </div>
 
-
+  <!-- special features -->
+  <div id="features">
+    <div class="special-features">
+      <div class="special-fea-heading">
+        <p>SPECIAL FEATURES</p>
+        <h2>
+          We Provide Specialized Care for Your Health
+        </h2>
+      </div>
+      <div class="special-fea-con">
+        <div class="special-fea-card">
+          <img src="./assets/img/services/fea1.png" alt="">
+          <h2>
+            Holistic Healing Solutions
+          </h2>
+          <p>
+            Comprehensive therapies addressing root causes effectively
+          </p>
+        </div>
+        <div class="special-fea-card">
+          <img src="./assets/img/services/fea2.png" alt="">
+          <h2>
+            Personalized Treatment Plans
+          </h2>
+          <p>
+            Care tailored to individual health and wellness needs. </p>
+        </div>
+        <div class="special-fea-card">
+          <img src="./assets/img/services/fea3.png" alt="">
+          <h2>
+            Advanced Natural Techniques
+          </h2>
+          <p>
+            Modern and traditional methods for optimal recovery </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -327,29 +364,53 @@ include('./resources/conn.php')
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 4,
+  spaceBetween: 15,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '#swiper-button-next',
+    prevEl: '#swiper-button-prev',
+  },
+  autoplay: {
+    delay: 2000,
+  },
+  breakpoints: {
+    768: {
       slidesPerView: 4,
-      spaceBetween: 15,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '#swiper-button-next',
-        prevEl: '#swiper-button-prev',
-      },
-      autoplay: {
-        delay: 2000,
-      },
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
+    },
+    576: {
+      slidesPerView: 2,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});
+
+var swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: 6,
+  spaceBetween: 15,
+  loop: true,
+  autoplay: {
+    delay: 1100,
+  },
+  breakpoints: {
+    768: {
       slidesPerView: 6,
-      spaceBetween: 15,
-      loop: true,
-      autoplay: {
-        delay: 1100,
-      },
-    });
+    },
+    576: {
+      slidesPerView: 3,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});
+
   </script>
 </body>
 

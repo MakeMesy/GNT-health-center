@@ -72,12 +72,12 @@
 
 .slide-content p,.therapy-content p {
     min-height: 75px;
-    font-size: clamp(9px, 1.5vw, 17px);
+    font-size: clamp(18px, 2vw, 20px);
     text-align: justify;
 }
 
 .slide-content h3 {
-    font-size: clamp(12px, 1.5vw, 20px);
+    font-size: clamp(20px, 1.5vw, 20px);
     font-weight: 700;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .treatments-content-heading h4, .therapy-heading h4{
-    font-size: clamp(12px, 2vw, 17px);
+    font-size: clamp(15px, 2vw, 17px);
     text-transform: uppercase;
     color: var(--white-text);
     font-weight: 700;
@@ -227,3 +227,109 @@
     background: var(--secondary-color);
     color: var(--white);
 }
+
+
+ /* special features  */
+
+ .special-features{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .special-fea-heading{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+ }
+ .special-fea-heading p{
+    background: var(--bglight-color);
+    width: fit-content;
+    color: var(--primary-color);
+    padding: 4px 18px;
+    border-radius: 3px;
+    font-size: clamp(15px, 2vw, 14px);
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+ }
+ .special-fea-heading h2{
+    font-size: clamp(28px,2.4vw,48px);
+    font-weight: 800;
+    margin-bottom: 3rem;
+    width: 80%;
+
+ }
+ .special-fea-con {
+    display: flex;
+    gap: 2rem;
+ }
+ .special-fea-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    border: 1px solid var(--white-text);
+    text-align: center;
+    border-radius: 4px;
+ }
+ .special-fea-card img{
+    width: 80px;
+ }
+ .special-fea-card h2{
+    font-size: clamp(18px,2vw,22px);
+    font-weight: 700;
+    width: 79%;
+ }
+ .special-fea-card p{
+    color: var(--white-text);
+    font-weight: 700;
+    font-size: clamp(15px,2vw,17px);
+
+ }
+
+
+
+ @media screen and (max-width:786px) {
+    .special-fea-con{
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .quote-main{
+        flex-direction: column;
+    }
+    .therapy-content{
+        flex-direction: column;
+    }
+    .therapy{
+        padding: 1rem;
+    }
+    #section-1{
+        height: 980px;
+    }
+    .treatments-content{
+        flex-direction: column;
+    }
+    #swiper-button-next,
+#swiper-button-prev{
+    top: 140%;
+}
+#swiper-button-next {
+    right: 0%;
+}
+
+#swiper-button-prev {
+    left: 0%;
+}
+
+.treatments-slider{
+    padding:1rem;
+}
+    
+ }
