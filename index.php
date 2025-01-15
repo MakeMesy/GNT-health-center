@@ -87,7 +87,30 @@ include('./resources/conn.php')
   <?php include('./resources/form.php') ?>
 
 
-
+<div id="offer-banner">
+  <div class="offer-main-banner">
+    <div class="offer-img">
+      <img src="./assets/img/home/offer.png" alt="">
+    </div>
+    <div class="offer-content">
+      <h2>OFFER NAME</h2>
+      <ul>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+      </ul>
+      <div class="offer-btn">
+        <button>
+          Book Now
+        </button>
+      </div>
+    </div>
+    <div class="offer-banner-ad">
+      <img src="./assets/img/home/banner.jpg" alt="">
+    </div>
+  </div>
+</div>
 
 
 
