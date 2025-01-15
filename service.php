@@ -1,7 +1,5 @@
 <?php
-
-include('./resources/conn.php')
-
+include('./resources/conn.php');
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +26,7 @@ include('./resources/conn.php')
 <body>
 
   <!-- navbar -->
-
-  <?php include('./resources/navbar.php') ?>
-
+  <?php include('./resources/navbar.php'); ?>
   <header style="background:url(./assets/img/header/service.jpg) no-repeat center/cover;">
     <h2>SERVICES</h2>
   </header>
@@ -364,53 +360,52 @@ include('./resources/conn.php')
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 4,
-  spaceBetween: 15,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '#swiper-button-next',
-    prevEl: '#swiper-button-prev',
-  },
-  autoplay: {
-    delay: 2000,
-  },
-  breakpoints: {
-    768: {
       slidesPerView: 4,
-    },
-    576: {
-      slidesPerView: 2,
-    },
-    0: {
-      slidesPerView: 1,
-    },
-  },
-});
+      spaceBetween: 15,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '#swiper-button-next',
+        prevEl: '#swiper-button-prev',
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
 
-var swiper2 = new Swiper(".mySwiper2", {
-  slidesPerView: 6,
-  spaceBetween: 15,
-  loop: true,
-  autoplay: {
-    delay: 1100,
-  },
-  breakpoints: {
-    768: {
+    var swiper2 = new Swiper(".mySwiper2", {
       slidesPerView: 6,
-    },
-    576: {
-      slidesPerView: 3,
-    },
-    0: {
-      slidesPerView: 1,
-    },
-  },
-});
-
+      spaceBetween: 15,
+      loop: true,
+      autoplay: {
+        delay: 1100,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 6,
+        },
+        576: {
+          slidesPerView: 3,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
   </script>
 </body>
 

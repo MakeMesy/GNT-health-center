@@ -34,6 +34,11 @@ include('./resources/conn.php')
 
 
 
+<?php include('./resources/form.php') ?>
+
+
+
+
 
 
 
