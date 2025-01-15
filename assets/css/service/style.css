@@ -103,7 +103,7 @@
     margin-top: 1rem;
 }
 
-.treatments-con p {
+.treatments-con p,.therapy-para p  {
     line-height: 2rem;
     text-align: justify;
     font-size: clamp(15px, 1.5vw, 17px);
@@ -163,6 +163,7 @@
 .myswiper-slide h3{
     font-size: clamp(12px,2vw,18px);
 }
+
 .myswiper-slide img{
     background: var(--primary-color);
     width: 60px;
@@ -178,4 +179,51 @@
 }
 .therapy-slider{
     margin-top: 2rem;
+}
+
+
+/*  QUOTE  */
+
+#quote-main-section{
+    height: 50vh;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    background: #0b2231c5;
+}
+#quote-main-section::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(../../img/services/bg.webp) no-repeat center/cover;
+}
+.quote-main{
+    z-index: 3;
+    color: var(--white);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quote-main h2{
+    font-size: clamp(28px,4vw,58px);
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+.quote-btn{
+    border: 1px solid var(--secondary-color);
+    padding: 2px;
+}
+.quote-btn button{
+    padding: 8px 12px;
+    font-weight: 600;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--white);
 }
