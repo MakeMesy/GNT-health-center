@@ -84,7 +84,6 @@ include('./resources/conn.php')
 
 
 
-  <?php include('./resources/form.php') ?>
 
 
 <div id="offer-banner">
@@ -112,8 +111,52 @@ include('./resources/conn.php')
   </div>
 </div>
 
+<!-- our services -->
+ <section id="our-services">
+  <div class="our-services-main">
+    <div class="our-services-head">
+      <h2>
+        OUR SERVICES
+      </h2>
+      <h4>
+      Our Premium Wellness Services
+      </h4>
+    </div>
+    <div class="our-services-items">
+      <div class="our-services-item">
+        <div class="our-services-item-img">
+          <img src="" alt="">
+        </div>
+        <div class="our-services-item-con">
+          <img src="./assets/img/home/acupuncture.png" alt="">
+          <h2>
+          Acupuncture Therapy
+          </h2>
+          <p>
+          Experience relief and balance through ancient acupuncture techniques, promoting natural healing and reducing pain by restoring energy flow.
+          </p>
+          <button>
+            Read More <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+      <div class="our-services-item"></div>
+      <div class="our-services-item"></div>
+    </div>
+  </div>
+ </section>
+ 
+
+<!-- feedback -->
+<?php include('./resources/feedback.php') ?>
+
+<!-- gallery -->
+<?php include('./resources/maingallery.php') ?>
 
 
+<!-- booking form -->
+<?php include('./resources/form.php') ?>
 
 
 
