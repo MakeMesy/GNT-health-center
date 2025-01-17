@@ -115,17 +115,17 @@ include('./resources/conn.php')
  <section id="our-services">
   <div class="our-services-main">
     <div class="our-services-head">
-      <h2>
-        OUR SERVICES
-      </h2>
       <h4>
-      Our Premium Wellness Services
+        OUR SERVICES
       </h4>
+      <h2>
+      Our Premium Wellness <br> Services
+      </h2>
     </div>
     <div class="our-services-items">
       <div class="our-services-item">
         <div class="our-services-item-img">
-          <img src="" alt="">
+          <img src="./assets/img/home/accu.jpeg" alt="">
         </div>
         <div class="our-services-item-con">
           <img src="./assets/img/home/acupuncture.png" alt="">
@@ -141,8 +141,43 @@ include('./resources/conn.php')
         </div>
 
       </div>
-      <div class="our-services-item"></div>
-      <div class="our-services-item"></div>
+      <div class="our-services-item">
+        <div class="our-services-item-img">
+          <img src="./assets/img/home/chiropractic.jpg" alt="">
+        </div>
+        <div class="our-services-item-con">
+          <img src="./assets/img/home/chiropractic.png" alt="">
+          <h2>
+          Chiropractic Care
+          </h2>
+          <p>
+          Restore spinal health and alleviate pain through expert chiropractic adjustments, improving mobility, posture, and overall well-being.          </p>
+          <button>
+            Read More <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+     
+      <div class="our-services-item">
+        <div class="our-services-item-img">
+          <img src="./assets/img/home/yoga.jpg" alt="">
+        </div>
+        <div class="our-services-item-con">
+          <img src="./assets/img/home/exercise.png" alt="">
+          <h2>
+          Yoga and Meditation
+                  </h2>
+          <p>
+          Enhance your physical and mental well-being with guided yoga and meditation sessions, fostering relaxation and inner harmony.          </p>
+          <button>
+            Read More <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+     
+     
     </div>
   </div>
  </section>

@@ -140,10 +140,85 @@ justify-content: space-between;
 }
 
 /* our services */
+.our-services-main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 14rem;
+}
+.our-services-head{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.our-services-head h4{
+    background: var(--bglight-color);
+    width: fit-content;
+    color: var(--primary-color);
+    padding: 4px 18px;
+    border-radius: 3px;
+    font-size: clamp(15px, 2vw, 14px);
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.our-services-head h2{
+    font-size: clamp(22px,3vw,38px);
+    font-weight: 700;
+    text-align: center;
+}.our-services-item-img img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 5px;
 
-
-
-
+}
+.our-services-item-con img{
+    width: 60px;
+    margin-top: 10px;
+}
+.our-services-items{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-around;
+    align-items: center;
+}
+.our-services-item-con h2{
+    font-size: clamp(18px,2vw,20px);
+    font-weight: 700;
+}
+.our-services-item {
+    width: 380px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.our-services-item-con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    width: 300px;
+    margin-top: -20px;
+    gap: 10px;
+}
+.our-services-item-con p{
+    text-align: justify;
+    min-height: 130px;
+    padding: 10px;
+}
+.our-services-item-con button{
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    background: var(--background-color);
+    color: var(--white);
+    font-weight: bold;
+}
 
   @media screen and (max-width:768px) {
     .swiper-button-next, .swiper-button-prev {
@@ -168,5 +243,16 @@ justify-content: space-between;
     .offer-main-banner{
         flex-direction: column;
         gap: 1rem;
+    }
+    .our-services-items{
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .our-services-item {
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+    .our-services-main{
+        margin-bottom: 3rem;
     }
   }

@@ -574,6 +574,11 @@
 }
 
  @media screen and (max-width:768px) {
+   /* gallery */
+   #gallery{
+   grid-template-columns: repeat(1,320px);
+  height: fit-content;
+   }
    /* feedback */
    .feedback-content{
       flex-direction: column;
