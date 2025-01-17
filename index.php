@@ -82,35 +82,16 @@ include('./resources/conn.php')
 
   <?php include('./resources/aboutcard.php') ?>
 
-
-
-
-
-<div id="offer-banner">
-  <div class="offer-main-banner">
-    <div class="offer-img">
-      <img src="./assets/img/home/offer.png" alt="">
-    </div>
-    <div class="offer-content">
-      <h2>OFFER NAME</h2>
-      <ul>
-        <li>OFFER !</li>
-        <li>OFFER !</li>
-        <li>OFFER !</li>
-        <li>OFFER !</li>
-      </ul>
-      <div class="offer-btn">
-        <button>
-          Book Now
-        </button>
+  <!-- features  -->
+   <section id="key-features">
+    <div class="key-features-main">
+      <div class="key-features-content">
+        
       </div>
     </div>
-    <div class="offer-banner-ad">
-      <img src="./assets/img/home/banner.jpg" alt="">
-    </div>
-  </div>
-</div>
+   </section>
 
+  
 <!-- our services -->
  <section id="our-services">
   <div class="our-services-main">
@@ -176,15 +157,98 @@ include('./resources/conn.php')
         </div>
 
       </div>
-     
-     
     </div>
   </div>
  </section>
  
 
+
+
+
+<div id="offer-banner">
+  <div class="offer-main-banner">
+    <div class="offer-img">
+      <img src="./assets/img/home/offer.png" alt="">
+    </div>
+    <div class="offer-content">
+      <h2>OFFER NAME</h2>
+      <ul>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+        <li>OFFER !</li>
+      </ul>
+      <div class="offer-btn">
+        <button>
+          Book Now
+        </button>
+      </div>
+    </div>
+    <div class="offer-banner-ad">
+      <img src="./assets/img/home/banner.jpg" alt="">
+    </div>
+  </div>
+</div>
+
 <!-- feedback -->
 <?php include('./resources/feedback.php') ?>
+
+<!-- why choose us -->
+
+<section id="choose-us">
+  <div class="choose-us-main">
+    <div class="choose-us-main-img">
+      <img src="./assets/img/home/chooseus.webp" alt="">
+    </div>
+    <div class="choose-us-con">
+      <div class="choose-us-con-heading">
+        <h4>
+        Why Choose Us
+        </h4>
+        <h2>
+        Experience Expert Care Through Natural Healing Solutions
+        </h2>
+        <p>
+        With experienced professionals, personalized care, and holistic natural therapies, we ensure your journey to wellness is effective and nurturing
+        </p>
+      </div>
+      <div class="choose-us-content">
+          <span class="choose-us-con-points"><img src="./assets/img/main/icon1.png" alt=""><span>Combining traditional and modern therapies for complete well-being.</span></span>
+          <span class="choose-us-con-points"><img src="./assets/img/main/icon1.png" alt=""><span>Skilled professionals delivering personalized and effective care.</span></span>
+      </div>
+      <div class="choose-us-points">
+        <div>
+          <img src="./assets/img/home/natural.png" alt="">
+          <p>
+          Natural Therapies
+          </p>
+        </div>
+        <div>
+          <img src="./assets/img/home/personalized.png" alt="">
+          <p>
+          Personalized Care
+          </p>
+        </div>
+        <div>
+          <img src="./assets/img/home/holistichealth.png" alt="">
+          <p>
+            5 + Years of Experience
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
 
 <!-- gallery -->
 <?php include('./resources/maingallery.php') ?>
