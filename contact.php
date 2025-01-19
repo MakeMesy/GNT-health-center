@@ -1,6 +1,6 @@
 <?php
 
-include('./resources/conn.php')
+include('./resources/conn.php');
 
 ?>
 
@@ -73,7 +73,7 @@ include('./resources/conn.php')
 </section> 
 
 
-<?php include('./resources/form.php') ?>
+<?php include('./resources/form.php'); ?>
 
 
 
