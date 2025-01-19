@@ -308,6 +308,111 @@ align-items: center;
     height: 20px;
 }
 
+/* features */
+#key-features{
+    background: var(--bglight-color);
+    height: 100vh;
+    padding: 5rem;
+}
+.key-features-main{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    gap: 2rem;
+}
+.key-image-1 img{  
+    width:480px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+
+} 
+
+.key-image-2{
+    position: absolute;
+  top:68%;
+  left: -14%;    
+}
+.key-image-2 img{
+    width: 380px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+   
+}
+.key-features-point-img img{
+    width: 40px;
+}
+.key-features-icon{
+    position: absolute;
+    left: 52%;
+    z-index: 1;
+    top: 0%;
+}
+.key-features-icon img{
+    width: 80px;
+}
+
+.key-features-con-heading h4{
+    background: var(--bglight-color);
+    width: fit-content;
+    color: var(--primary-color);
+    padding: 4px 18px;
+    border-radius: 3px;
+    font-size: clamp(15px, 2vw, 14px);
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.key-features-point-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bglight-color);
+    border-radius: 50%;
+    padding: 5px;
+}
+.key-features-con-heading h2{
+    font-size: clamp(22px,3vw,30px);
+    font-weight: 700;
+}
+.key-features-con-point {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.key-features-images{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.key-features-con-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+.key-features-points-con p{
+color: #8b8b8b;
+padding-left:5px ;
+}
+.key-features-points-con h2{
+    font-weight: bold;
+    font-size: clamp(18px,3vw,20px);
+
+}
+
+
+
+
 
 
 
@@ -366,6 +471,32 @@ align-items: center;
     padding: 0;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
     }
+    /* features */
+    #key-features{
+        height: fit-content;
+        padding: 1rem;
+    }
+    .key-features-main{
+        flex-direction: column;
+
+    }
+    .key-features-con-points {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+    .key-features-icon{
+        left: 70%;
+        top: 0;
+    }
+    .key-image-1 img{
+         width: 380px;
+         height: 280px;
+    }
+    .key-image-2{
+       display: none;
+    }
+   
+
   }
