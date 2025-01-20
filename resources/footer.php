@@ -40,15 +40,25 @@
             <h2>Pictures</h2>
             <div class="footer-img">  
             <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
-            <img src="./assets/img/footer/img1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img2.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/gallery/flower.webp" alt="" width="100px" height="80px">
+            <img src="./assets/img/home/slider1.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/header/about.jpg" alt="" width="100px" height="80px">
+            <img src="./assets/img/footer/img3.jpg" alt="" width="100px" height="80px">
             </div>
         </div>
         <div class="footer-detail">
-            <div class="footer-content">
+        <div class="footer-content">
+                   <div class="opening-hrs">
+                   <h5>Opening Hours</h5>
+
+    <span>Monday to Friday: 9:00 AM to 7:00 PM</span> <br>
+    <span>Sunday: 10:00 AM to 4:00 PM</span> <br>
+    <span>Saturday Leave</span>
+
+                   </div>
+            </div>
+            <div class="footer-content mt-4">
         <div class="footer-item">
                 <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar 6th street, Theni - Allinagram</span>
                 <div class="footer-item">
