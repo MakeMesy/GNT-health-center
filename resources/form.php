@@ -1,22 +1,4 @@
-<?php
 
-include('../resources/conn.php');
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-   $name=$_POST['name'];
-   $email=$_POST['email'];
-   $number=$_POST['number'];
-   $service_category=$_POST['service_category'];
-   $message=$_POST['message'];
-   $form_stmt=$conn->prepare("INSERT INTO appointments (full_name,email_address,phone_number,service_category,message) VALUES (?,?,?,?,?)");
-   $form_stmt->bind_param('sssss',$name,$email,$number,$service_category,$message);
-   $form_stmt->execute();
-   $form_stmt->close();
-   header('Location: ../');
-
-}
-
-?>
 
 
 <section id="contact-form">
@@ -42,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     </div>
     <div class="contact-form-main">
-        <form action="./resources/form.php" method="post">
+        <form action="./backend/form.php" method="post">
             <div class="form-group">
                 <div class="name-form">
                     <label for="">Full Name Here</label>
@@ -51,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <div class="email-form">
                     <label for="">Email Address</label>
-                    <input type="text" placeholder="Email Address" name="email">
+                    <input type="email" placeholder="Email Address" name="email">
                 </div>
             </div>
             <div class="form-group">
