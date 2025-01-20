@@ -34,7 +34,7 @@
                 <li><a href="./service.php">Services</a></li>
                 <li class="dropdown">
 
-                    <a href="">Treatments</a>
+                    <a >Treatments</a>
                     <ul class="submenu">
                     <li><a href="./bridal-care.php">Bridal Care</a></li>
                 <li><a href="./weight-loss.php">Weight Loss</a></li>

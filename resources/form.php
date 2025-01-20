@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="">Your Phone</label>
-                <input type="text" placeholder="Phone Number or Whatsapp Number" name="number">
+                <input type="number" placeholder="Phone Number or Whatsapp Number" name="number">
             </div>
             <div class="form-group">
                 <label for="">Service</label>

@@ -1,0 +1,96 @@
+@import url(../resources/resource.css);
+
+
+/* navbar */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+#navbar{
+    background: var(--text-color);
+}
+.navbar-icon img{
+    width: 280px;
+}
+.navbar nav ul li{
+    list-style: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.navbar nav ul li a{
+    color: var(--white);
+}
+.navbar nav ul{
+    display: flex;
+}
+
+
+/* appointsment */
+.appointments-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    max-width: 980px;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+.appointments-list  a{
+    color: var(--text-color);
+}
+
+.appointment-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.appointment-item:hover {
+    transform: scale(1.05);
+}
+
+.appointment-item h2 {
+    font-size: 20px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.appointment-item h4 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.appointment-item p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.appointment-item strong {
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .appointments-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .appointment-item {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-item {
+        width: 100%;
+    }
+}
