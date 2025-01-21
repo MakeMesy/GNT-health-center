@@ -1,10 +1,36 @@
 <?php
-
 include('./resources/conn.php');
 
+$treatment_query = "SELECT url_name FROM treatments";
+$stmt_for_treatment = $conn->prepare($treatment_query);
+$stmt_for_treatment->execute();
+$result = $stmt_for_treatment->get_result();
 
+$treatments = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $treatments[] = $row['url_name'];
+    }
+}
+if (isset($_GET['treatment'])&& in_array($_GET['treatment'], $treatments)) {
+    $url_name = $_GET['treatment'];
 
+    $treatment_query = "SELECT * FROM treatments WHERE url_name = ?";
+    $stmt_for_treatment = $conn->prepare($treatment_query);
+    $stmt_for_treatment->bind_param("s", $url_name);
+    $stmt_for_treatment->execute();
+    $result = $stmt_for_treatment->get_result();
+
+    if ($result->num_rows > 0) {
+        $treatment_details = $result->fetch_assoc();
+    } else {
+        echo "Treatment not found.";
+    }
+} else {
+    header("Location: ./");
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +59,7 @@ include('./resources/conn.php');
 
 
 
-
+<?php echo htmlspecialchars($treatment_details['name']) ?>
 
 
 
