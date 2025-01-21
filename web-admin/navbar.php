@@ -9,6 +9,7 @@
         <li><a href="./"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
 <li><a href="./appointments.php"><i class="fas fa-calendar-check"></i> Appointments</a></li>
 <li><a href="./"><i class="fas fa-procedures"></i> Treatments</a></li>
+<li><a href="./adsbanner.php"><i class="fa fa-bullhorn"></i> Ads Banner</a></li>
 <li><a href="./"><i class="fas fa-user"></i> Profile</a></li>
 
         </ul>

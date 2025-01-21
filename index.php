@@ -225,28 +225,48 @@ include('./resources/conn.php')
 
 
   <div id="offer-banner">
+  <?php
+$banner_query = "SELECT * FROM adsbanner ORDER BY created_at DESC LIMIT 1";
+$result = $conn->query($banner_query);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $ad_name = $row['ad_name'];
+    $ad_banner = $row['ad_banner'];
+    $description = json_decode($row['description'], true);
+    ?>
+
     <div class="offer-main-banner">
-      <div class="offer-img">
+        <div class="offer-img">
         <img src="./assets/img/home/offer.png" alt="">
-      </div>
-      <div class="offer-content">
-        <h2>OFFER NAME</h2>
-        <ul>
-          <li>OFFER !</li>
-          <li>OFFER !</li>
-          <li>OFFER !</li>
-          <li>OFFER !</li>
-        </ul>
-        <div class="offer-btn">
-          <button>
-            Book Now
-          </button>
+ 
         </div>
-      </div>
-      <div class="offer-banner-ad">
-        <img src="./assets/img/home/banner.jpg" alt="">
-      </div>
+        <div class="offer-content">
+            <h2><?php echo htmlspecialchars($ad_name); ?></h2>
+            <ul>
+                <?php
+                if (is_array($description)) {
+                    foreach ($description as $offer) {
+                        echo "<li>" . htmlspecialchars($offer) . "</li>";
+                    }
+                }
+                ?>
+            </ul>
+            <div class="offer-btn">
+                <button>Book Now</button>
+            </div>
+        </div>
+        <div class="offer-banner-ad">
+        <img src="./assets/img/offer/<?php echo htmlspecialchars($ad_banner); ?>" alt="Ad Banner">
+        </div>
     </div>
+
+    <?php
+} else {
+    echo '<div class="offer-main-banner"><p>No offers available at the moment.</p></div>';
+}
+?>
+
   </div>
 
   <!-- feedback -->
