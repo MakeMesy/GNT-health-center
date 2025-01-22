@@ -60,6 +60,7 @@ if (isset($_GET['treatment'])&& in_array($_GET['treatment'], $treatments)) {
 
 
 <?php echo htmlspecialchars($treatment_details['name']) ?>
+<?php echo htmlspecialchars($treatment_details['benefits']) ?>
 
 
 
