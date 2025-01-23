@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
         $treatments[] = $row['url_name'];
     }
 }
-if (isset($_GET['treatment'])&& in_array($_GET['treatment'], $treatments)) {
+if (isset($_GET['treatment']) && in_array($_GET['treatment'], $treatments)) {
     $url_name = $_GET['treatment'];
 
     $treatment_query = "SELECT * FROM treatments WHERE url_name = ?";
@@ -34,43 +34,137 @@ if (isset($_GET['treatment'])&& in_array($_GET['treatment'], $treatments)) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> <?php echo $name ?></title>
-  <link rel="shortcut icon" href="./assets/img/main/favicon.png" type="image/x-icon">
-  <!-- links -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  
-  <!-- custom css -->
-   <link rel="stylesheet" href="./assets/css/resources/resource.css">
-   <link rel="stylesheet" href="./assets/css/resources/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <?php echo $name ?></title>
+    <link rel="shortcut icon" href="./assets/img/main/favicon.png" type="image/x-icon">
+    <!-- links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/resources/resource.css">
+    <link rel="stylesheet" href="./assets/css/resources/style.css">
+    <link rel="stylesheet" href="./assets/css/treatments/style.css">
 
 
 </head>
+
 <body>
 
-<!-- navbar -->
-
-<?php include('./resources/navbar.php') ?>
-
+    <!-- navbar -->
+    <?php include('./resources/navbar.php') ?>
 
 
+    <!-- hero section -->
+    <div class="" id="hero-section" style="background: url('./assets/img/treatmentshero/<?php echo htmlspecialchars($treatment_details['herosection']); ?>') no-repeat center/cover ;">
 
-<?php echo htmlspecialchars($treatment_details['name']) ?>
-<?php echo htmlspecialchars($treatment_details['benefits']) ?>
+        <div class="hero-section-con">
+            <h2>
+                <?php echo htmlspecialchars($treatment_details['herosection_title']); ?>
+            </h2>
+            <h4 class="mt-5">
+                <?php echo htmlspecialchars($treatment_details['herosection_des']); ?>
+
+            </h4>
+        </div>
+    </div>
 
 
+    <!-- about section -->
 
-<!-- footer -->
-<?php include('./resources/footer.php') ?>
+     <div id="about-section" class="section-init">
+           <div class="about-section">
+           <div class="about-img">
+           <img src=./assets/img/treatmentsaboutimg/<?php echo htmlspecialchars($treatment_details['thumbnail']); ?> alt="">
+
+           </div>
+           <div class="about-con">
+            <h2>
+            <?php echo htmlspecialchars($treatment_details['slogan']); ?>
+            </h2>
+            <p>
+            <?php echo htmlspecialchars($treatment_details['about']); ?>
+            </p>
+           </div>
+           </div>
+     </div>
+
+     <!-- therapies -->
+  <div id="therapies" class="section-init">
+   
+    <div class="therapies">
+
+    <div class="therapies-heading mb-5">
+        <h2>Our Specialized Therapies</h2>
+        <h4>
+        Tailored treatments for your holistic well-being
+        </h4>
+    </div>
+    <div class="therapies-lists">
+        <?php  $therapie_list=json_decode($treatment_details['therapies'],true);
+        if(isset($therapie_list['therapies'])&&is_array($therapie_list['therapies'])){
+            foreach($therapie_list['therapies'] as $therapie){
+                echo "<div class='list-of-therapies'>";
+                echo "<div class='therapies-img' >
+                   <img src='./assets/img/treatments/".htmlspecialchars($therapie['image']). "' />
+                </div>";
+
+                echo "<h2>".nl2br(htmlspecialchars($therapie['name']))."</h2>";
+
+                echo "</div>";
+            }
+        }else{
+            echo "<p>No Treatments.</p>";
+        }
+?>
+    </div>
+    </div>
+  </div>
 
 
+  <!-- benefits -->
+   <div id="benefits" class="section-init">
+    <div class="benefits-heading d-flex justify-content-center mb-5">
+        <h2>
+            Benefits of <?php echo htmlspecialchars($treatment_details['name']); ?>
+        </h2>
+    </div>
+   <div class="benefits-section">
 
-<!-- custom scripts -->
-<script src="./assets/js/resource/script.js"></script>
-  <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
+<div class="benefits-sec-1 benefits-con">
+<?php  $therapie_benefits=json_decode($treatment_details['benefits']);
+            foreach(array_slice($therapie_benefits,0,3) as $benefit){
+        echo "<ul>";
+           echo  '<li><i class="fa-solid fa-feather-pointed"></i>'. htmlspecialchars($benefit)."</li>";
+        
+       echo "</ul>";}
+?>
+</div>
+<div class="benefits-sec-2">
+<img src=./assets/img/treatmentsbenefits/<?php echo htmlspecialchars($treatment_details['images']); ?> alt="">
+</div>
+<div class="benefits-sec-3 benefits-con">
+<?php  $therapie_benefits=json_decode($treatment_details['benefits']);
+            foreach(array_slice($therapie_benefits,3,6) as $benefit){
+        echo "<ul>";
+           echo  '<li><i class="fa-solid fa-feather-pointed"></i>'. htmlspecialchars($benefit)."</li>";
+        
+       echo "</ul>";}
+?>
+</div>
+
+   </div>
+   </div>
+    <!-- footer -->
+    <?php include('./resources/footer.php') ?>
+
+    <!-- custom scripts -->
+    <script src="./assets/js/resource/script.js"></script>
+    <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

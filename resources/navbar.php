@@ -36,13 +36,13 @@
 
                     <a >Treatments</a>
                     <ul class="submenu">
-                    <li><a href="./bridal-care.php">Bridal Care</a></li>
-                <li><a href="./weight-loss.php">Weight Loss</a></li>
-                <li><a href="./hair-care.php">Hair Care</a></li>
-                <li><a href="./skin-care.php">Skin Care</a></li>
-                <li><a href="./pain-relief.php">Pain Relief</a></li>
-                <li><a href="./insomnia.php">Insomnia</a></li>
-                <li><a href="./spine-care.php">Spine Care</a></li>
+                    <li><a href="./treatments.php?treatment=bridal-care">Bridal Care</a></li>
+                <li><a href="./treatments.php?treatment=weight-loss">Weight Loss</a></li>
+                <li><a href="./treatments.php?treatment=hair-care">Hair Care</a></li>
+                <li><a href="./treatments.php?treatment=skin-care">Skin Care</a></li>
+                <li><a href="./treatments.php?treatment=pain-relief">Pain Relief</a></li>
+                <li><a href="./treatments.php?treatment=insomnia">Insomnia</a></li>
+                <li><a href="./treatments.php?treatment=spine-care">Spine Care</a></li>
                     </ul>
 
                 </li>
@@ -70,13 +70,13 @@
                     <li class="dropdown">
                         <a >Treatments</a>
                         <ul class="mobile-submenu">
-                        <li><a href="./bridal-care.php">Bridal Care</a></li>
-                <li><a href="./weight-loss.php">Weight Loss</a></li>
-                <li><a href="./hair-care.php">Hair Care</a></li>
-                <li><a href="./skin-care.php">Skin Care</a></li>
-                <li><a href="./pain-relief.php">Pain Relief</a></li>
-                <li><a href="./insomnia.php">Insomnia</a></li>
-                <li><a href="./spine-care.php">Spine Care</a></li>
+                        <li><a href="./treatments.php?treatment=bridal-care">Bridal Care</a></li>
+                <li><a href="./treatments.php?treatment=weight-loss">Weight Loss</a></li>
+                <li><a href="./treatments.php?treatment=hair-care">Hair Care</a></li>
+                <li><a href="./treatments.php?treatment=skin-care">Skin Care</a></li>
+                <li><a href="./treatments.php?treatment=pain-relief">Pain Relief</a></li>
+                <li><a href="./treatments.php?treatment=insomnia">Insomnia</a></li>
+                <li><a href="./treatments.php?treatment=spine-care">Spine Care</a></li>
                         </ul>
                     </li>
                     <li><a href="./gallery.php">Gallery</a></li>
