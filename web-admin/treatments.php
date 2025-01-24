@@ -1,6 +1,23 @@
 <?php
 
-include('../resources/conn.php')
+include('../resources/conn.php');
+
+
+$treatment_list_nav = "SELECT * FROM treatments";
+$stmt_for_treatment_list_nav = $conn->prepare($treatment_list_nav);
+$stmt_for_treatment_list_nav->execute();
+$result_list = $stmt_for_treatment_list_nav->get_result();
+$treatments_nav=[];
+if ($result_list->num_rows > 0) {
+    while($treatment_list=$result_list->fetch_assoc()){
+        $treatments_nav[]=$treatment_list;
+        
+    }
+
+} else {
+    echo "Treatment not found.";
+}
+
 
 ?>
 
@@ -9,7 +26,7 @@ include('../resources/conn.php')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Treatments</title>
   <link rel="shortcut icon" href="../assets/img/main/favicon.png" type="image/x-icon">
   <!-- links -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
@@ -24,6 +41,36 @@ include('../resources/conn.php')
 <?php include('./navbar.php') ?>
 
 
+
+<!-- add the treatments -->
+<div class="new-treatments d-flex justify-content-start mt-5 mb-5 p-2 container">
+  
+  <h5 class="mr-5">Add New Treatments</h5>
+  <button class="btn btn-primary "> Add </button>
+</div>
+
+
+
+<!-- treatments list -->
+
+<div class="treatment-main">
+  <div class="treatments-content">
+    <?php
+      foreach( $treatments_nav as $treatments_list){
+        echo "<div class='treatments-list'>";
+        echo "<div>";
+        echo "<h2>".$treatments_list['name']."</h2>";
+        echo "<p>".$treatments_list['herosection_title']."</p>";
+        echo "<button>Update</button>";
+        echo "<button>Delete</button>";
+        echo "</div>";
+        echo "<img src=../assets/img/treatmentsaboutimg/".$treatments_list['thumbnail']." width='180px' height='180px'>";
+        echo "</div>";
+    }
+
+    ?>
+  </div>
+</div>
 
 
 
