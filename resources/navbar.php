@@ -1,3 +1,22 @@
+<?php
+
+$treatment_list_nav = "SELECT url_name,name FROM treatments";
+$stmt_for_treatment_list_nav = $conn->prepare($treatment_list_nav);
+$stmt_for_treatment_list_nav->execute();
+$result_list = $stmt_for_treatment_list_nav->get_result();
+$treatments_nav=[];
+if ($result_list->num_rows > 0) {
+    while($treatment_list=$result_list->fetch_assoc()){
+        $treatments_nav[]=$treatment_list;
+        
+    }
+
+} else {
+    echo "Treatment not found.";
+}
+
+?>
+
 <div class="navbar-1">
     <div class="navbar-container  ">
         <div class="navbar-detail ">
@@ -36,13 +55,13 @@
 
                     <a >Treatments</a>
                     <ul class="submenu">
-                    <li><a href="./treatments.php?treatment=bridal-care">Bridal Care</a></li>
-                <li><a href="./treatments.php?treatment=weight-loss">Weight Loss</a></li>
-                <li><a href="./treatments.php?treatment=hair-care">Hair Care</a></li>
-                <li><a href="./treatments.php?treatment=skin-care">Skin Care</a></li>
-                <li><a href="./treatments.php?treatment=pain-relief">Pain Relief</a></li>
-                <li><a href="./treatments.php?treatment=insomnia">Insomnia</a></li>
-                <li><a href="./treatments.php?treatment=spine-care">Spine Care</a></li>
+
+                    <?php 
+                    foreach( $treatments_nav as $nav_treatments){
+                        echo "<li><a href=./treatments.php?treatment=".$nav_treatments['url_name'].">".$nav_treatments['name']."</a></li>";
+                    }
+
+                    ?>
                     </ul>
 
                 </li>
@@ -70,13 +89,12 @@
                     <li class="dropdown">
                         <a >Treatments</a>
                         <ul class="mobile-submenu">
-                        <li><a href="./treatments.php?treatment=bridal-care">Bridal Care</a></li>
-                <li><a href="./treatments.php?treatment=weight-loss">Weight Loss</a></li>
-                <li><a href="./treatments.php?treatment=hair-care">Hair Care</a></li>
-                <li><a href="./treatments.php?treatment=skin-care">Skin Care</a></li>
-                <li><a href="./treatments.php?treatment=pain-relief">Pain Relief</a></li>
-                <li><a href="./treatments.php?treatment=insomnia">Insomnia</a></li>
-                <li><a href="./treatments.php?treatment=spine-care">Spine Care</a></li>
+                        <?php 
+                    foreach( $treatments_nav as $nav_treatments){
+                        echo "<li><a href=./treatments.php?treatment=".$nav_treatments['url_name'].">".$nav_treatments['name']."</a></li>";
+                    }
+
+                    ?>
                         </ul>
                     </li>
                     <li><a href="./gallery.php">Gallery</a></li>

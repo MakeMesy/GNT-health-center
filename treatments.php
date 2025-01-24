@@ -29,6 +29,11 @@ if (isset($_GET['treatment']) && in_array($_GET['treatment'], $treatments)) {
 } else {
     header("Location: ./");
 }
+
+function safe_htmlspecialchars($value)
+{
+    return htmlspecialchars($value !== Null ? $value : '', ENT_QUOTES, 'UTF-8');
+}
 ?>
 
 
@@ -64,10 +69,10 @@ if (isset($_GET['treatment']) && in_array($_GET['treatment'], $treatments)) {
 
         <div class="hero-section-con">
             <h2>
-                <?php echo htmlspecialchars($treatment_details['herosection_title']); ?>
+                <?php echo safe_htmlspecialchars($treatment_details['herosection_title']); ?>
             </h2>
             <h4 class="mt-5">
-                <?php echo htmlspecialchars($treatment_details['herosection_des']); ?>
+                <?php echo safe_htmlspecialchars($treatment_details['herosection_des']); ?>
 
             </h4>
         </div>
@@ -76,89 +81,116 @@ if (isset($_GET['treatment']) && in_array($_GET['treatment'], $treatments)) {
 
     <!-- about section -->
 
-     <div id="about-section" class="section-init">
-           <div class="about-section">
-           <div class="about-img">
-           <img src=./assets/img/treatmentsaboutimg/<?php echo htmlspecialchars($treatment_details['thumbnail']); ?> alt="">
+    <div id="about-section" class="section-init">
+        <div class="about-section">
+            <div class="about-img">
+                <img src=./assets/img/treatmentsaboutimg/<?php echo safe_htmlspecialchars($treatment_details['thumbnail']); ?> alt="">
 
-           </div>
-           <div class="about-con">
-            <h2>
-            <?php echo htmlspecialchars($treatment_details['slogan']); ?>
-            </h2>
-            <p>
-            <?php echo htmlspecialchars($treatment_details['about']); ?>
-            </p>
-           </div>
-           </div>
-     </div>
-
-     <!-- therapies -->
-  <div id="therapies" class="section-init">
-   
-    <div class="therapies">
-
-    <div class="therapies-heading mb-5">
-        <h2>Our Specialized Therapies</h2>
-        <h4>
-        Tailored treatments for your holistic well-being
-        </h4>
+            </div>
+            <div class="about-con">
+                <h2>
+                    <?php echo safe_htmlspecialchars($treatment_details['slogan']); ?>
+                </h2>
+                <p>
+                    <?php echo safe_htmlspecialchars($treatment_details['about']); ?>
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="therapies-lists">
-        <?php  $therapie_list=json_decode($treatment_details['therapies'],true);
-        if(isset($therapie_list['therapies'])&&is_array($therapie_list['therapies'])){
-            foreach($therapie_list['therapies'] as $therapie){
-                echo "<div class='list-of-therapies'>";
-                echo "<div class='therapies-img' >
-                   <img src='./assets/img/treatments/".htmlspecialchars($therapie['image']). "' />
+
+    <!-- therapies -->
+    <div id="therapies" class="section-init">
+
+        <div class="therapies">
+
+            <div class="therapies-heading mb-5">
+                <h2>Our Specialized Therapies</h2>
+                <h4>
+                    Tailored treatments for your holistic well-being
+                </h4>
+            </div>
+            <div class="therapies-lists">
+                <?php $therapie_list = json_decode($treatment_details['therapies'], true);
+                if (isset($therapie_list['therapies']) && is_array($therapie_list['therapies'])) {
+                    foreach ($therapie_list['therapies'] as $therapie) {
+                        echo "<div class='list-of-therapies'>";
+                        echo "<div class='therapies-img' >
+                   <img src='./assets/img/treatments/" . safe_htmlspecialchars($therapie['image']) . "' />
                 </div>";
 
-                echo "<h2>".nl2br(htmlspecialchars($therapie['name']))."</h2>";
+                        echo "<h2>" . nl2br(safe_htmlspecialchars($therapie['name'])) . "</h2>";
 
-                echo "</div>";
-            }
-        }else{
-            echo "<p>No Treatments.</p>";
-        }
-?>
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>No Treatments.</p>";
+                }
+                ?>
+            </div>
+        </div>
     </div>
+
+
+    <!-- benefits -->
+    <div id="benefits" class="section-init">
+        <div class="benefits-heading d-flex justify-content-center mb-5">
+            <h2>
+                Benefits of <?php echo safe_htmlspecialchars($treatment_details['name']); ?>
+            </h2>
+        </div>
+        <div class="benefits-section">
+
+            <div class="benefits-sec-1 benefits-con">
+                <?php
+                $therapie_benefits = json_decode($treatment_details['benefits'], true);
+                if (is_array($therapie_benefits) && !empty($therapie_benefits)) {
+                    foreach (array_slice($therapie_benefits, 0, 3) as $benefit) {
+                        echo "<ul>";
+                        echo '<li><i class="fa-solid fa-feather-pointed"></i>' . safe_htmlspecialchars($benefit) . "</li>";
+                        echo "</ul>";
+                    }
+                } else {
+                    echo "No valid benefits found or the data is empty.";
+                }
+                ?>
+            </div>
+            <div class="benefits-sec-2">
+                <img src=./assets/img/treatmentsbenefits/<?php echo safe_htmlspecialchars($treatment_details['images']); ?> alt="">
+            </div>
+            <div class="benefits-sec-3 benefits-con">
+                <?php $therapie_benefits = json_decode($treatment_details['benefits']);
+                if (is_array($therapie_benefits) && !empty($therapie_benefits)) {
+                    foreach (array_slice($therapie_benefits, 3, 6) as $benefit) {
+                        echo "<ul>";
+                        echo '<li><i class="fa-solid fa-feather-pointed"></i>' . safe_htmlspecialchars($benefit) . "</li>";
+                        echo "</ul>";
+                    }
+                }
+                ?>
+            </div>
+
+        </div>
     </div>
-  </div>
 
 
-  <!-- benefits -->
-   <div id="benefits" class="section-init">
-    <div class="benefits-heading d-flex justify-content-center mb-5">
-        <h2>
-            Benefits of <?php echo htmlspecialchars($treatment_details['name']); ?>
-        </h2>
+    <div id="quote-main-section">
+        <div class="quote-main">
+            <div>
+                <h2>Heal naturally, live fully</h2>
+                <h4>Don't Hesitate To Contact With Us</h4>
+            </div>
+            <div>
+                <div class="quote-btn"><button>
+                        Book Now <i class="fa-solid fa-arrow-right"></i>
+                    </button></div>
+            </div>
+        </div>
     </div>
-   <div class="benefits-section">
 
-<div class="benefits-sec-1 benefits-con">
-<?php  $therapie_benefits=json_decode($treatment_details['benefits']);
-            foreach(array_slice($therapie_benefits,0,3) as $benefit){
-        echo "<ul>";
-           echo  '<li><i class="fa-solid fa-feather-pointed"></i>'. htmlspecialchars($benefit)."</li>";
-        
-       echo "</ul>";}
-?>
-</div>
-<div class="benefits-sec-2">
-<img src=./assets/img/treatmentsbenefits/<?php echo htmlspecialchars($treatment_details['images']); ?> alt="">
-</div>
-<div class="benefits-sec-3 benefits-con">
-<?php  $therapie_benefits=json_decode($treatment_details['benefits']);
-            foreach(array_slice($therapie_benefits,3,6) as $benefit){
-        echo "<ul>";
-           echo  '<li><i class="fa-solid fa-feather-pointed"></i>'. htmlspecialchars($benefit)."</li>";
-        
-       echo "</ul>";}
-?>
-</div>
+    <!-- feedback -->
+    <?php include('./resources/feedback.php') ?>
+    <?php include('./resources/form.php') ?>
 
-   </div>
-   </div>
     <!-- footer -->
     <?php include('./resources/footer.php') ?>
 

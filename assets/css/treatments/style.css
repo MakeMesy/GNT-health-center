@@ -111,7 +111,7 @@
 }
 
 .list-of-therapies h2 {
-   font-size: clamp(18px, 2vw, 20px);
+   font-size: clamp(22px, 2vw, 20px);
 }
 
 .therapies-img {
@@ -121,7 +121,7 @@
 }
 
 .therapies-heading h2 {
-   font-size: clamp(18px, 3.2vw, 32px);
+   font-size: clamp(22px, 3.2vw, 32px);
    line-height: 1.4;
    font-weight: 700;
    margin-bottom: 1rem;
@@ -194,6 +194,75 @@
 .benefits-con ul li i{
    color: var(--primary-color);
 }
+
+
+/*  QUOTE  */
+
+#quote-main-section{
+   height: 50vh;
+   margin-top: 5rem;
+   margin-bottom: 2rem;
+   position: relative;
+   background: #0b2231c5;
+}
+#quote-main-section::before{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   background: url(../../img/services/bg.webp) no-repeat center/cover;
+}
+.quote-main{
+   z-index: 3;
+   color: var(--white);
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   height: 50vh;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.quote-main h2{
+   font-size: clamp(28px,4vw,58px);
+   font-weight: 800;
+   margin-bottom: 3rem;
+}
+.quote-btn{
+   border: 1px solid var(--secondary-color);
+   padding: 2px;
+}
+.quote-btn button{
+   padding: 8px 12px;
+   font-weight: 600;
+   border: none;
+   background: var(--secondary-color);
+   color: var(--white);
+}
+
 /* responsive */
 
-@media screen and (max-width:768px) {}
+@media screen and (max-width:768px) {
+   /* quote */
+   .quote-main{
+      flex-direction: column;
+  }
+  /*therapies  */
+  
+.therapies-lists{
+   grid-template-columns: repeat(1,1fr);
+}
+.therapies-heading{
+  text-align: center;
+}
+.about-section{
+   flex-direction: column;
+   align-items: center;
+justify-content: center;
+}
+.benefits-section{
+   flex-direction: column;
+}
+}
