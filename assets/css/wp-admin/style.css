@@ -15,7 +15,7 @@
     background: var(--text-color);
 }
 .navbar-icon img{
-    width: 280px;
+    width: 200px;
 }
 .navbar nav ul li{
     list-style: none;

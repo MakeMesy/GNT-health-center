@@ -1,0 +1,288 @@
+@import url(../resources/resource.css);
+
+
+
+/* update icon */
+.update-icon{
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.update-icon:hover{
+    background: var(--secondary-color);
+}
+/* hero section */
+#hero-section {
+   height: 80vh;
+   width: 100%;
+   position: relative;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+}
+
+#hero-section::before {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: var(--dark-bglight-color);
+
+}
+
+.hero-section-con {
+   padding-left: 3rem;
+   z-index: 1;
+   color: var(--white);
+   filter: drop-shadow(0px 2px 4px rgba(77, 174, 74, 0.3));
+}
+
+.hero-section-con input {
+   font-size: clamp(18px, 3.2vw, 28px);
+   width: 100%;
+   text-transform:capitalize;
+   background: none;
+   color: var(--white);
+   border: 1px solid var(--white);
+   padding: 5px 8px;
+   border-radius:3px;
+}
+
+/* about section */
+.section-init {
+   padding: 2rem;
+   margin-top: 3rem;
+   margin-bottom: 2rem;
+}
+
+.about-section {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+
+}
+
+.about-img {
+   width: 100%;
+}
+
+.about-img img {
+   width: 480px;
+   height: 480px;
+   border-radius: 5px;
+   border-top-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+   object-fit: cover;
+   box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+}
+
+.about-con {
+   padding: 3rem;
+}
+
+.about-con h2 {
+   font-size: clamp(18px, 3.2vw, 32px);
+   line-height: 1.4;
+   font-weight: 700;
+   margin-bottom: 1rem;
+}
+
+.about-con p {
+   padding: 10px;
+   line-height: 1.7;
+   text-align: justify;
+   font-size: clamp(15px, 1.5vw, 17px);
+
+}
+
+/* therapies */
+.therapies {
+   width: 100%;
+   max-width: 1300px;
+   margin: 0 auto;
+}
+
+.therapies-heading {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.therapies-img {
+   background: url('../../img/treatments/roundborder.png') no-repeat center/cover;
+   width: 200px;
+   height: 200px;
+   position: relative;
+
+}
+
+.list-of-therapies {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+}
+
+.list-of-therapies h2 {
+   font-size: clamp(22px, 2vw, 20px);
+}
+
+.therapies-img {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.therapies-heading h2 {
+   font-size: clamp(22px, 3.2vw, 32px);
+   line-height: 1.4;
+   font-weight: 700;
+   margin-bottom: 1rem;
+
+}
+
+.therapies-heading h4 {
+   font-size: clamp(18px, 3.2vw, 25px);
+   line-height: 1.4;
+   font-weight: 700;
+
+}
+
+.therapies-img img {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.therapies-lists {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   justify-items: center;
+   margin-top: 3rem;
+}
+
+/* benefits */
+#benefits{
+   background: var(--bglight-color);
+}
+.benefits-section{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.benefits-heading h2{
+   font-size: clamp(18px, 3.2vw, 32px);
+   line-height: 1.4;
+   font-weight: 700;
+   margin-bottom: 1rem;
+}
+.benefits-sec-2{
+   width: 70%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.benefits-sec-2 img{
+   border-radius: 50%;
+   width: 400px;
+   height: 400px;
+   object-fit: cover;
+   box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+   border: 1px solid var(--primary-color);
+}
+.benefits-con ul li{
+   list-style: none;
+   font-size: clamp(18px, 2vw, 19px);
+   text-align: justify;
+   margin-bottom: 2rem;
+   display: inline-flex;
+   align-items: center;
+  gap: 1rem;
+
+}
+.benefits-con ul li i{
+   color: var(--primary-color);
+}
+
+
+/*  QUOTE  */
+
+#quote-main-section{
+   height: 50vh;
+   margin-top: 5rem;
+   margin-bottom: 2rem;
+   position: relative;
+   background: #0b2231c5;
+}
+#quote-main-section::before{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   background: url(../../img/services/bg.webp) no-repeat center/cover;
+}
+.quote-main{
+   z-index: 3;
+   color: var(--white);
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   height: 50vh;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.quote-main h2{
+   font-size: clamp(28px,4vw,58px);
+   font-weight: 800;
+   margin-bottom: 3rem;
+}
+.quote-btn{
+   border: 1px solid var(--secondary-color);
+   padding: 2px;
+}
+.quote-btn button{
+   padding: 8px 12px;
+   font-weight: 600;
+   border: none;
+   background: var(--secondary-color);
+   color: var(--white);
+}
+
+/* responsive */
+
+@media screen and (max-width:768px) {
+   /* quote */
+   .quote-main{
+      flex-direction: column;
+  }
+  /*therapies  */
+  
+.therapies-lists{
+   grid-template-columns: repeat(1,1fr);
+}
+.therapies-heading{
+  text-align: center;
+}
+.about-section{
+   flex-direction: column;
+   align-items: center;
+justify-content: center;
+}
+.benefits-section{
+   flex-direction: column;
+}
+}

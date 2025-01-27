@@ -10,13 +10,30 @@ $result_list = $stmt_for_treatment_list_nav->get_result();
 $treatments_nav=[];
 if ($result_list->num_rows > 0) {
     while($treatment_list=$result_list->fetch_assoc()){
-        $treatments_nav[]=$treatment_list;
-        
+        $treatments_nav[]=$treatment_list;   
     }
 
 } else {
     echo "Treatment not found.";
 }
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $treatment_id = $_POST['treatment_id'];
+
+  if ( $treatment_id ) {
+          $stmt = $conn->prepare("DELETE from treatments where id= ?");
+          $stmt->bind_param("s", $treatment_id);
+          $stmt->execute();
+          $stmt->close();
+
+          header('Location: ./treatments.php');
+          exit();
+      } else {
+          echo '<script>alert("error in delete")</script>';
+      }
+  }
+
 
 
 ?>
@@ -46,7 +63,7 @@ if ($result_list->num_rows > 0) {
 <div class="new-treatments d-flex justify-content-start mt-5 mb-5 p-2 container">
   
   <h5 class="mr-5">Add New Treatments</h5>
-  <button class="btn btn-primary "> Add </button>
+  <a href="./add-treatments.php"><button class="btn btn-primary "> Add </button></a>
 </div>
 
 
@@ -61,8 +78,11 @@ if ($result_list->num_rows > 0) {
         echo "<div>";
         echo "<h2>".$treatments_list['name']."</h2>";
         echo "<p>".$treatments_list['herosection_title']."</p>";
-        echo "<button>Update</button>";
-        echo "<button>Delete</button>";
+        echo "<a href='./update-treatments.php?id=".$treatments_list['id']."' target='_blank'><button class='mb-2 '>Update</button></a>";
+        echo "<form action='./treatments.php' method='POST' >";
+        echo "<input type='hidden' name='treatment_id' value='" . $treatments_list['id'] . "'>";
+        echo "<button type='submit' onclick='return confirm(\"Are you sure you want to delete this treatment?\")'>Delete</button>";
+        echo "</form>";
         echo "</div>";
         echo "<img src=../assets/img/treatmentsaboutimg/".$treatments_list['thumbnail']." width='180px' height='180px'>";
         echo "</div>";
