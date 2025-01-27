@@ -18,6 +18,36 @@ if (isset($_GET['id'])) {
     } else {
         echo header("Location: ./treatments.php");
     }
+     
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $formName=$_POST['form_name'];
+        if($formName=='hero-title'){
+            $hero_title=$_POST['herosection_title'];
+            $hero_title_update="UPDATE treatments set herosection_title=? where id= ?";
+            $hero_title_stmt=$conn->prepare($hero_title_update);
+            $hero_title_stmt->bind_param('ss',$hero_title,$id);
+            if($hero_title_stmt->execute()){
+                echo '<script>alert("herosection title updated")</script>';
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }else{
+                echo '<script>alert("error herosection title updated")</script>';
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }
+        }
+        // elseif(){
+
+        // }
+
+    }
+
+
+
 } else {
     header("Location: ./");
 }
@@ -57,11 +87,10 @@ function safe_htmlspecialchars($value)
 
         <div class="hero-section-con">
           <div>
-            <form action="./update-treatments.php" name="hero-title">
-   
-            <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['herosection_title']); ?>"></button>
-          
-                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i>
+            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" >
+            <input type="hidden" name="form_name" value="hero-title">
+            <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['herosection_title']); ?>" name='herosection_title'>
+                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
             </form>
             </div>
             <h4 class="mt-5">
