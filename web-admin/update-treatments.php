@@ -56,9 +56,71 @@ if (isset($_GET['id'])) {
                 ob_end_flush();
                 exit();
             }
+        }elseif($formName=='slogan'){
+            $slogan=$_POST['slogan'];
+            $slogan_update="UPDATE treatments set slogan=? where id= ?";
+            $slogan_stmt=$conn->prepare($slogan_update);
+            $slogan_stmt->bind_param('ss',$slogan,$id);
+            if($slogan_stmt->execute()){
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }else{
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }
         }
+        elseif($formName=="about"){
+            $about=$_POST['about'];
+            $about_update="UPDATE treatments set about=? where id= ?";
+            $about_stmt=$conn->prepare($about_update);
+            $about_stmt->bind_param('ss',$about,$id);
+            if($about_stmt->execute()){
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }else{
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }
+        }
+        elseif ($formName == "benefit_update") {
+            $benefit_index = $_POST['benefit_index'] ?? null;
+            $benefit = $_POST['benefit'] ?? null;
+
+            if (isset($benefit_index) && $benefit !== null) {
+                $therapie_benefits = json_decode($treatment_details['benefits'], true);
+
+                if (is_array($therapie_benefits) && isset($therapie_benefits[$benefit_index])) {
+                    $therapie_benefits[$benefit_index] = htmlspecialchars($benefit, ENT_QUOTES, 'UTF-8');
+
+                    $updated_benefits = json_encode($therapie_benefits);
+                    $update_query = "UPDATE treatments SET benefits = ? WHERE id = ?";
+                    $update_stmt = $conn->prepare($update_query);
+                    $update_stmt->bind_param('ss', $updated_benefits, $id);
+
+                    if ($update_stmt->execute()) {
+                        echo '<script>alert("Benefit updated successfully!");</script>';
+                        header("Location: ./update-treatments.php?id=$id");
+                        exit();
+                    } else {
+                        echo '<script>alert("Error updating benefit.");</script>';
+                    }
+                } else {
+                    echo '<script>alert("Invalid benefit index.");</script>';
+                }
+            } else {
+                echo '<script>alert("Invalid data provided.");</script>';
+            }
 
     }
+}
 
 
 
@@ -129,12 +191,22 @@ function safe_htmlspecialchars($value)
 
             </div>
             <div class="about-con">
-                <h2>
-                    <?php echo safe_htmlspecialchars($treatment_details['slogan']); ?>
-                </h2>
-                <p>
-                    <?php echo safe_htmlspecialchars($treatment_details['about']); ?>
-                </p>
+                <div > 
+                <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" >
+            <input type="hidden" name="form_name" value="slogan">
+            <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['slogan']); ?>" name='slogan' class="slogan_input" >
+                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            </form>
+                </div>
+                <div>
+                <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" >
+            <input type="hidden" name="form_name" value="about">
+            <textarea name="about" id="">
+                <?php echo safe_htmlspecialchars($treatment_details['about']); ?>
+            </textarea>
+                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            </form>
+                </div>
             </div>
         </div>
     </div>
@@ -182,35 +254,34 @@ function safe_htmlspecialchars($value)
         <div class="benefits-section">
 
             <div class="benefits-sec-1 benefits-con">
-                <?php
-                $therapie_benefits = json_decode($treatment_details['benefits'], true);
-                if (is_array($therapie_benefits) && !empty($therapie_benefits)) {
-                    foreach (array_slice($therapie_benefits, 0, 3) as $benefit) {
-                        echo "<ul>";
-                        echo '<li><i class="fa-solid fa-feather-pointed"></i>' . safe_htmlspecialchars($benefit) . "</li>";
-                        echo "</ul>";
-                    }
-                } else {
-                    echo "No valid benefits found or the data is empty.";
-                }
-                ?>
+            <?php
+$therapie_benefits = json_decode($treatment_details['benefits'], true);
+
+if (is_array($therapie_benefits) && !empty($therapie_benefits)) {
+    echo "<ul>";
+    foreach (array_slice($therapie_benefits, 0, 6) as $index => $benefit) {
+        ?>
+        <li>
+            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post">
+                <input type="hidden" name="form_name" value="benefit_update">
+                <input type="hidden" name="benefit_index" value="<?php echo $index; ?>">
+                <input type="text" name="benefit" value="<?php echo htmlspecialchars($benefit, ENT_QUOTES, 'UTF-8'); ?>" class="benefit-points">
+                <button type="submit" class="update-icon" ><i class="fa fa-refresh" aria-hidden="true" style="color: white;"></i></button>
+            </form>
+        </li>
+        <?php
+    }
+    echo "</ul>";
+} else {
+    echo "No valid benefits found or the data is empty.";
+}
+?>
+
             </div>
             <div class="benefits-sec-2">
                 <img src=../assets/img/treatmentsbenefits/<?php echo safe_htmlspecialchars($treatment_details['images']); ?> alt="">
             </div>
-            <div class="benefits-sec-3 benefits-con">
-                <?php $therapie_benefits = json_decode($treatment_details['benefits']);
-                if (is_array($therapie_benefits) && !empty($therapie_benefits)) {
-                    foreach (array_slice($therapie_benefits, 3, 6) as $benefit) {
-                        echo "<ul>";
-                        echo '<li><i class="fa-solid fa-feather-pointed"></i>' . safe_htmlspecialchars($benefit) . "</li>";
-                        echo "</ul>";
-                    }
-                }
-                ?>
-            </div>
-
-        </div>
+            
     </div>
 
 
