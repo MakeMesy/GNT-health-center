@@ -40,9 +40,23 @@ if (isset($_GET['id'])) {
                 exit();
             }
         }
-        // elseif(){
-
-        // }
+        elseif($formName=='hero-des'){
+            $hero_des=$_POST['herosection_des'];
+            $hero_des_update="UPDATE treatments set herosection_des=? where id= ?";
+            $hero_des_stmt=$conn->prepare($hero_des_update);
+            $hero_des_stmt->bind_param('ss',$hero_des,$id);
+            if($hero_des_stmt->execute()){
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }else{
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            }
+        }
 
     }
 
@@ -87,16 +101,21 @@ function safe_htmlspecialchars($value)
 
         <div class="hero-section-con">
           <div>
+            <p>Title</p>
             <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" >
             <input type="hidden" name="form_name" value="hero-title">
             <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['herosection_title']); ?>" name='herosection_title'>
                 <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
             </form>
             </div>
-            <h4 class="mt-5">
-                <?php echo safe_htmlspecialchars($treatment_details['herosection_des']); ?>
-
-            </h4>
+            <div class="mt-5">
+           <p>Description</p>
+            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" >
+            <input type="hidden" name="form_name" value="hero-des">
+            <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['herosection_des']); ?>" name='herosection_des' >
+                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            </form>
+            </div>
         </div>
     </div>
 
