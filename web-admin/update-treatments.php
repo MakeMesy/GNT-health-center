@@ -159,8 +159,7 @@ if (isset($_GET['id'])) {
                     echo "Failed to upload the image.";
                 }
             }
-        }
-        elseif ($formName == 'hero-img') {
+        } elseif ($formName == 'hero-img') {
 
             if (isset($_FILES['hero-image']) && $_FILES['hero-image']['error'] == 0) {
                 $hero_image = $_FILES['hero-image'];
@@ -182,23 +181,23 @@ if (isset($_GET['id'])) {
                     echo "Failed to upload the image.";
                 }
             }
-        }elseif ($formName == 'therapies') {
+        } elseif ($formName == 'therapies') {
             $therapy_index = intval($_POST['therapy_index']);
-            
+
             if ($therapy_index >= 0) {
                 $therapie_list = json_decode($treatment_details['therapies'], true);
-        
+
                 if (is_array($therapie_list) && isset($therapie_list['therapies'][$therapy_index])) {
                     unset($therapie_list['therapies'][$therapy_index]);
                     $therapie_list['therapies'] = array_values($therapie_list['therapies']);
-        
+
                     $updated_json = json_encode($therapie_list, JSON_PRETTY_PRINT);
-        
+
                     $id = intval($_GET['id']);
                     $stmt = $conn->prepare("UPDATE treatments SET therapies = ? WHERE id = ?");
                     $stmt->bind_param("si", $updated_json, $id);
                     $stmt->execute();
-        
+
                     header("Location: ./update-treatments.php?id=$id&status=deleted");
                     exit;
                 } else {
@@ -207,46 +206,44 @@ if (isset($_GET['id'])) {
             } else {
                 echo "Invalid request.";
             }
-        }elseif ($formName == 'therapie_add') {
+        } elseif ($formName == 'therapie_add') {
             $id = intval($_GET['id']);
             $therapie_name = trim($_POST['therapie_name']);
             $upload_dir = "../assets/img/treatments/";
             $image_name = "";
-        
+
             if (!empty($_FILES['therapie_images']['name'])) {
                 $image_name = basename($_FILES['therapie_images']['name']);
                 $target_path = $upload_dir . $image_name;
-        
+
                 if (move_uploaded_file($_FILES['therapie_images']['tmp_name'], $target_path)) {
                 } else {
                     echo "Error uploading image.";
                     exit;
                 }
             }
-        
-            
+
+
             $therapie_list = json_decode($treatment_details['therapies'], true);
-            
+
             if (!is_array($therapie_list)) {
                 $therapie_list = ['therapies' => []];
             }
-        
+
             $therapie_list['therapies'][] = [
                 'name' => $therapie_name,
                 'image' => $image_name
             ];
-        
+
             $updated_json = json_encode($therapie_list, JSON_PRETTY_PRINT);
-        
+
             $stmt = $conn->prepare("UPDATE treatments SET therapies = ? WHERE id = ?");
             $stmt->bind_param("si", $updated_json, $id);
             $stmt->execute();
-        
+
             header("Location: ./update-treatments.php?id=$id&status=added");
             exit;
         }
-        
-              
     }
 } else {
     header("Location: ./");
@@ -288,14 +285,14 @@ function safe_htmlspecialchars($value)
     <div class="" id="hero-section" style="background: url('../assets/img/treatmentshero/<?php echo htmlspecialchars($treatment_details['herosection']); ?>') no-repeat center/cover ;">
 
         <div class="hero-section-con">
-      <div>
-        <p>Thumnail</p>
-      <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="form_name" value="hero-img">
-                <input type="file" name='hero-image' >
-                <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-            </form>
-      </div>
+            <div>
+                <p>Thumnail</p>
+                <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="form_name" value="hero-img">
+                    <input type="file" name='hero-image'>
+                    <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                </form>
+            </div>
             <div>
                 <p>Title</p>
                 <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post">
@@ -386,12 +383,12 @@ function safe_htmlspecialchars($value)
                 ?>
             </div>
             <div class="therapie-add d">
-            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" class="d-flex flex-column mt-4" enctype="multipart/form-data" > 
-                                <input type="hidden" name="form_name" value="therapie_add">
-                                <input type="file" name="therapie_images" >
-                                <input type="text" name="therapie_name" value="" class="w-25 mt-2" >
-                                <button type="submit" class="update-icon">Add</button>
-                            </form>
+                <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post" class="d-flex flex-column mt-4" enctype="multipart/form-data">
+                    <input type="hidden" name="form_name" value="therapie_add">
+                    <input type="file" name="therapie_images">
+                    <input type="text" name="therapie_name" value="" class="w-25 mt-2">
+                    <button type="submit" class="update-icon">Add</button>
+                </form>
             </div>
         </div>
     </div>

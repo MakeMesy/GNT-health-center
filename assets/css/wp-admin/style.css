@@ -80,6 +80,16 @@
     color: #333;
 }
 
+.update-icon{
+    padding: 5px 8px;
+    color: var(--white);
+    background: var(--primary-color);
+    border: none;
+    width: 100%;
+}
+.update-icon:hover{
+    background: var(--secondary-color);
+}
 /* treatments */
 .treatment-main{
     width: 100%;
