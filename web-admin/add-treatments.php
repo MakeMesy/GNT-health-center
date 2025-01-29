@@ -1,28 +1,27 @@
 <?php
 include('../resources/conn.php');
 
-// Function to upload files and return only the filename
+
 function uploadFile($file, $target_dir) {
     if (isset($file['tmp_name']) && is_uploaded_file($file['tmp_name'])) {
-        // Generate a unique filename to avoid overwriting
+
         $file_name = time() . "_" . uniqid() . "_" . basename($file["name"]);
         $target_file = $target_dir . $file_name;
 
-        // Ensure the directory exists
+
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
 
-        // Move the file and return only the filename if successful
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
-            return $file_name;  // Only the filename is stored
+            return $file_name;  
         }
     }
     return null;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize inputs
+
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $url_name = mysqli_real_escape_string($conn, $_POST['url_name']);
     $slogan = mysqli_real_escape_string($conn, $_POST['slogan']);
@@ -30,20 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $herosection_title = mysqli_real_escape_string($conn, $_POST['herosection_title']);
     $herosection_des = mysqli_real_escape_string($conn, $_POST['herosection_des']);
 
-    // Convert benefits array to JSON format
+
     $benefits = isset($_POST['benefits']) ? json_encode($_POST['benefits'], JSON_UNESCAPED_SLASHES) : json_encode([]);
 
-    // Handle multiple images - Store only filenames
     
     $images = uploadFile($_FILES['images'], "../assets/img/treatmentsbenefits/");
 
-    // Upload thumbnail
+
     $thumbnail = uploadFile($_FILES['thumbnail'], "../assets/img/treatmentsaboutimg/");
 
-    // Upload hero section image
+
     $herosection = uploadFile($_FILES['herosection'], "../assets/img/treatmentshero/");
 
-    // Handle therapies
+
     $therapies = [];
     if (isset($_POST['therapies_name']) && is_array($_POST['therapies_name']) && isset($_FILES['therapies_image'])) {
         foreach ($_POST['therapies_name'] as $key => $therapy_name) {
@@ -56,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($therapy_image) {
                     $therapies[] = [
                         'name' => mysqli_real_escape_string($conn, $therapy_name),
-                        'image' => $therapy_image  // Only the filename
+                        'image' => $therapy_image 
                     ];
                 }
             }
@@ -64,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $therapies_json = json_encode(['therapies' => $therapies], JSON_UNESCAPED_SLASHES);
 
-    // Save data to database
     $stmt = $conn->prepare("INSERT INTO treatments (name, url_name, slogan, about, benefits, therapies, images, thumbnail, herosection, herosection_title, herosection_des)
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssssss", $name, $url_name, $slogan, $about, $benefits, $therapies_json, $images, $thumbnail, $herosection, $herosection_title, $herosection_des);
