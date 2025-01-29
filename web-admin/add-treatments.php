@@ -1,7 +1,5 @@
 <?php
 include('../resources/conn.php');
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 // Function to upload files and return only the filename
 function uploadFile($file, $target_dir) {
