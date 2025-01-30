@@ -1,10 +1,12 @@
 <div id="navbar">
     <div class="navbar">
+        <a href="./">
         <div class="navbar-icon">
             <img src="../assets/img/main/logo.png" alt="">
         </div>
+        </a>
         <div>
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li><a href="./"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                     <li><a href="./appointments.php"><i class="fas fa-calendar-check"></i> Appointments</a></li>
@@ -13,7 +15,7 @@
                     <li><a href="./"><i class="fas fa-cog"></i> Settings</a></li>
 
                 </ul>
-            </nav>
+            </nav> -->
         </div>
     </div>
 </div>
