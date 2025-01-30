@@ -1,4 +1,4 @@
-<section id="feedback">
+<!-- <section id="feedback">
     <div class="feedback-main">
       <div class="feedback-heading">
         <span>
@@ -47,4 +47,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
