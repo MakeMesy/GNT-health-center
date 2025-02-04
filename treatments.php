@@ -171,7 +171,51 @@ function safe_htmlspecialchars($value)
 
         </div>
     </div>
+    <?php   $video_url = $treatment_details['video_link'] ?? '';
+        
+        if (!empty($video_url)) { ?>
+          <div id="video_section" class="section-init">
 
+<div class="video-section">
+    <div class="video-section-heading">
+    <h2>See the Demo</h2>
+    </div>
+    <div class="video-section-content">
+        <div class="video-section-con">
+            <h2>
+            <?php echo safe_htmlspecialchars($treatment_details['video_title']); ?>
+            </h2>
+            <p>
+            <?php echo safe_htmlspecialchars($treatment_details['about_video']); ?>       
+             </p>
+        </div>
+    <div class="yt-video">
+    <?php 
+    $video_url = $treatment_details['video_link'] ?? '';
+
+    if (!empty($video_url)) {
+        $video_id = '';
+
+        if (strpos($video_url, 'youtube.com') !== false) {
+            parse_str(parse_url($video_url, PHP_URL_QUERY) ?? '', $query_params);
+            $video_id = $query_params['v'] ?? '';
+        } 
+        elseif (strpos($video_url, 'youtu.be') !== false) {
+            $video_id = trim(parse_url($video_url, PHP_URL_PATH), '/');
+        }
+
+        if (!empty($video_id)) {
+            echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . htmlspecialchars($video_id) . '" 
+            frameborder="0" allowfullscreen></iframe>';
+        }
+    }
+?></div>
+    </div>
+    
+</div>
+</div>
+       <?php }?>
+   
 
     <div id="quote-main-section">
         <div class="quote-main">

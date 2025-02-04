@@ -1,8 +1,13 @@
-#social_media {
+#social_media{
     display: flex;
     justify-content: start;
     align-items: center;
     margin: 20px 0;
+}
+.main-section{
+    width: 100%;
+    max-width:1100px;
+    margin: 0 auto;
 }
 
 form {
@@ -48,4 +53,24 @@ span {
 
 .update-icon i {
     font-size: 16px;
+}
+
+/* marquee */
+.marquee-con{
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+.marquee-con input{
+    width: 100%;
+}
+
+#marquee-text{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }

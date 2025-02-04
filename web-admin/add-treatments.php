@@ -28,6 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $about = mysqli_real_escape_string($conn, $_POST['about']);
     $herosection_title = mysqli_real_escape_string($conn, $_POST['herosection_title']);
     $herosection_des = mysqli_real_escape_string($conn, $_POST['herosection_des']);
+    $video_link = mysqli_real_escape_string($conn, $_POST['video_link']);
+    $about_video = mysqli_real_escape_string($conn, $_POST['about_video']);
+    $video_title = mysqli_real_escape_string($conn, $_POST['video_title']);
+
 
 
     $benefits = isset($_POST['benefits']) ? json_encode($_POST['benefits'], JSON_UNESCAPED_SLASHES) : json_encode([]);
@@ -62,9 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $therapies_json = json_encode(['therapies' => $therapies], JSON_UNESCAPED_SLASHES);
 
-    $stmt = $conn->prepare("INSERT INTO treatments (name, url_name, slogan, about, benefits, therapies, images, thumbnail, herosection, herosection_title, herosection_des)
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssssss", $name, $url_name, $slogan, $about, $benefits, $therapies_json, $images, $thumbnail, $herosection, $herosection_title, $herosection_des);
+    $stmt = $conn->prepare("INSERT INTO treatments (name, url_name, slogan, about, benefits, therapies, images, thumbnail, herosection, herosection_title, herosection_des,about_video,video_link,video_title)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?)");
+    $stmt->bind_param("ssssssssssssss", $name, $url_name, $slogan, $about, $benefits, $therapies_json, $images, $thumbnail, $herosection, $herosection_title, $herosection_des,$about_video,$video_link,$video_title);
 
     if ($stmt->execute()) {
         echo "<script>alert('successfully created')</script>";
@@ -118,29 +122,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="form-section">
         <label for="slogan">Slogan:</label>
-        <input type="text" name="slogan" id="slogan" class="full-width mt-2">
+        <input type="text" name="slogan" id="slogan" class="full-width mt-2" required>
     </div>
 
     <div class="form-section">
         <label for="about">About:</label>
-        <textarea name="about" id="about" rows="4" class="full-width mt-2"></textarea>
+        <textarea name="about" id="about" rows="4" class="full-width mt-2" required></textarea>
     </div>
 
     <div class="form-section">
         <label for="benefits">Benefits (Maximum 6 Points):</label>
         <div id="benefit-list">
-            <input type="text" name="benefits[]" id="benefits" class="full-width mt-2">
+            <input type="text" name="benefits[]" id="benefits" class="full-width mt-2" required>
         </div>
         <div>
-            <button type="button" id="add-benefits" class="btn btn-success btn-sm">Add Benefits</button>
+            <button type="button" id="add-benefits" class="btn btn-success btn-sm" >Add Benefits</button>
         </div>
     </div>
 
     <div class="form-section">
         <label for="therapies">Therapies (Name and Image):</label>
         <div id="therapies-list">
-            <input type="text" name="therapies_name[]" placeholder="Therapy Name" class="full-width mt-2">
-            <input type="file" name="therapies_image[]" class="mt-2">
+            <input type="text" name="therapies_name[]" placeholder="Therapy Name" class="full-width mt-2" required>
+            <input type="file" name="therapies_image[]" class="mt-2" required>
         </div>
         <div>
             <button type="button" id="add-therapy" class="btn btn-success btn-sm">Add Therapies</button>
@@ -149,27 +153,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="form-section">
         <label for="images">Images:</label>
-        <input type="file" name="images" id="images" multiple class="mt-2">
+        <input type="file" name="images" id="images" multiple class="mt-2" required>
     </div>
 
     <div class="form-section">
         <label for="thumbnail">Thumbnail:</label>
-        <input type="file" name="thumbnail" id="thumbnail" class="mt-2">
+        <input type="file" name="thumbnail" id="thumbnail" class="mt-2" required>
     </div>
 
     <div class="form-section">
         <label for="herosection">Hero Section Image:</label>
-        <input type="file" name="herosection" id="herosection" class="mt-2">
+        <input type="file" name="herosection" id="herosection" class="mt-2" required>
     </div>
 
     <div class="form-section">
         <label for="herosection_title">Hero Section Title:</label>
-        <input type="text" name="herosection_title" id="herosection_title" class="full-width mt-2">
+        <input type="text" name="herosection_title" id="herosection_title" class="full-width mt-2" required>
     </div>
 
     <div class="form-section">
         <label for="herosection_des">Hero Section Description:</label>
-        <textarea name="herosection_des" id="herosection_des" rows="4" class="full-width mt-2"></textarea>
+        <textarea name="herosection_des" id="herosection_des" rows="4" class="full-width mt-2" required></textarea>
+    </div>
+
+    <!-- youtube video -->
+    <div class="form-section">
+        <label for="video_link">Youtube Video Link:</label>
+        <input type="input" name="video_link" id="video_link" class="mt-2" required>
+    </div>
+
+    <div class="form-section">
+        <label for="video_title">Video title</label>
+        <input type="text" name="video_title" id="video_title" class="full-width mt-2" required>
+    </div>
+
+    <div class="form-section">
+        <label for="about_video">About Video</label>
+        <textarea name="about_video" id="video_about" rows="4" class="full-width mt-2" required></textarea>
     </div>
 
     <div class="form-section">

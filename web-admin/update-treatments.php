@@ -70,8 +70,57 @@ if (isset($_GET['id'])) {
                 header("Location: ./update-treatments.php?id=$id");
                 ob_end_flush();
                 exit();
+            }}
+            elseif ($formName == 'video_title') {
+                $video_title = $_POST['video_title'];
+                $video_title_update = "UPDATE treatments set video_title=? where id= ?";
+                $video_title_stmt = $conn->prepare($video_title_update);
+                $video_title_stmt->bind_param('ss', $video_title, $id);
+                if ($video_title_stmt->execute()) {
+                    ob_start();
+                    header("Location: ./update-treatments.php?id=$id");
+                    ob_end_flush();
+                    exit();
+                } else {
+                    ob_start();
+                    header("Location: ./update-treatments.php?id=$id");
+                    ob_end_flush();
+                    exit();
+                }
+        }elseif ($formName == 'about_video') {
+            $about_video = $_POST['about_video'];
+            $about_video_update = "UPDATE treatments set about_video=? where id= ?";
+            $about_video_stmt = $conn->prepare($about_video_update);
+            $about_video_stmt->bind_param('ss', $about_video, $id);
+            if ($about_video_stmt->execute()) {
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
+            } else {
+                ob_start();
+                header("Location: ./update-treatments.php?id=$id");
+                ob_end_flush();
+                exit();
             }
-        } elseif ($formName == "about") {
+    } elseif ($formName == 'video_link') {
+        $video_link = $_POST['video_link'];
+        $video_link_update = "UPDATE treatments set video_link=? where id= ?";
+        $video_link_stmt = $conn->prepare($video_link_update);
+        $video_link_stmt->bind_param('ss', $video_link, $id);
+        if ($video_link_stmt->execute()) {
+            ob_start();
+            header("Location: ./update-treatments.php?id=$id");
+            ob_end_flush();
+            exit();
+        } else {
+            ob_start();
+            header("Location: ./update-treatments.php?id=$id");
+            ob_end_flush();
+            exit();
+        }
+}
+elseif ($formName == "about") {
             $about = $_POST['about'];
             $about_update = "UPDATE treatments set about=? where id= ?";
             $about_stmt = $conn->prepare($about_update);
@@ -438,6 +487,75 @@ function safe_htmlspecialchars($value)
             </div>
 
         </div>
+        </div>
+        </div>
+
+        <div id="video_section" class="section-init">
+
+<div class="video-section">
+    <div class="video-section-heading">
+        <?php   $video_url = $treatment_details['video_link'] ?? '';
+        
+        if (!empty($video_url)) {
+            echo '<h2>See the Demo</h2>';
+        }?>
+    
+    </div>
+    <div class="video-section-content">
+        <div class="video-section-con">
+
+            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post">
+                        <input type="hidden" name="form_name" value="video_title">
+                        <h2>
+                        <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['video_title']); ?>" name='video_title' >
+                        </h2>
+                        <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </form>
+           
+
+
+            <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post">
+                        <input type="hidden" name="form_name" value="about_video">
+                        <textarea type="text" value="" name='about_video' class="about_video">
+                        <?php echo safe_htmlspecialchars($treatment_details['about_video']); ?>
+                        </textarea>
+                        <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </form>     
+                    <h4>Youtube Video Link </h4>    
+                    <form action="./update-treatments.php?id=<?php echo urlencode($treatment_details['id']); ?>" method="post">
+                        <input type="hidden" name="form_name" value="video_link">
+                        <input type="text" value="<?php echo safe_htmlspecialchars($treatment_details['video_link']); ?>" name='video_link' >
+                        <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </form>     
+        </div>
+    <div class="yt-video">
+    <?php 
+    $video_url = $treatment_details['video_link'] ?? '';
+
+    if (!empty($video_url)) {
+        $video_id = '';
+
+        if (strpos($video_url, 'youtube.com') !== false) {
+            parse_str(parse_url($video_url, PHP_URL_QUERY) ?? '', $query_params);
+            $video_id = $query_params['v'] ?? '';
+        } 
+        elseif (strpos($video_url, 'youtu.be') !== false) {
+            $video_id = trim(parse_url($video_url, PHP_URL_PATH), '/');
+        }
+
+        if (!empty($video_id)) {
+            echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . htmlspecialchars($video_id) . '" 
+            frameborder="0" allowfullscreen></iframe>';
+        }
+    }
+?>
+
+
+</div>
+    </div>
+    
+</div>
+</div>
 
 
 

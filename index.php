@@ -83,8 +83,27 @@ include('./resources/conn.php')
   <div class="marquee">
 <div class="marquee-con">
 <marquee behavior="smooth" direction="right">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, minus. Laudantium, quibusdam nemo itaque reiciendis dolorem voluptatum. Harum, itaque voluptates, quisquam sit excepturi fugit porro repellendus, consequatur provident assumenda eaque.
-    </marquee>
+<?php
+
+$marquee_query = "SELECT *  FROM marquee";
+$stmt_marquee = $conn->prepare($marquee_query);
+$stmt_marquee->execute();
+$result_marquee = $stmt_marquee->get_result();
+$marquee_con=[];
+if ($result_marquee->num_rows > 0) {
+    while($marquee_list=$result_marquee->fetch_assoc()){
+        $marquee_con[]=$marquee_list;
+        foreach($marquee_con as $marquee){
+          echo $marquee['marquee_text'];
+        }
+    }
+
+} else {
+    echo "Social Media not found.";
+}
+
+
+?></marquee>
 </div>
   </div>
 

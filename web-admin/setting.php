@@ -39,9 +39,41 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             exit();
         }
     }
+    elseif($FormName=='marquee_update'){
+        $marque_id=$_POST['marque_id'];
+        $marquee_text=$_POST['marquee_text'];
+
+        $marquee_update = "UPDATE marquee set marquee_text=? where id= ?";
+        $marquee_stmt = $conn->prepare($marquee_update);
+        $marquee_stmt->bind_param('ss', $marquee_text, $marque_id);
+        if ($marquee_stmt->execute()) {
+            ob_start();
+            header("Location: ./setting.php");
+            ob_end_flush();
+            exit();
+        } else {
+            ob_start();
+            header("Location: ./setting.php");
+            ob_end_flush();
+            exit();
+        }
+    }
 }
 
+$marquee_query = "SELECT *  FROM marquee";
+$stmt_marquee = $conn->prepare($marquee_query);
+$stmt_marquee->execute();
+$result_marquee = $stmt_marquee->get_result();
+$marquee_con=[];
+if ($result_marquee->num_rows > 0) {
+    while($marquee_list=$result_marquee->fetch_assoc()){
+        $marquee_con[]=$marquee_list;
+        
+    }
 
+} else {
+    echo "Social Media not found.";
+}
 
 ?>
 
@@ -85,6 +117,19 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
   </div>
 
+  <div id="marquee-text" class="">
+    <h2>Marquee Text </h2>
+  <?php foreach ( $marquee_con as $marquee): ?>
+
+                <form action="./setting.php" method="post" class="marquee-con">
+                <input type="hidden" value="marquee_update" name="FormName">
+                <input type="hidden" value="<?php echo $marquee['id'] ?>" name="marque_id">
+                <input type="text" value="<?php echo $marquee['marquee_text'] ?>" name="marquee_text">
+               <button type="submit" class="update-icon"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+               </form>
+
+            <?php endforeach; ?>
+  </div>
 
 
 
