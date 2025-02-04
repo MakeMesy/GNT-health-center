@@ -27,7 +27,7 @@ if ($result_list->num_rows > 0) {
                 <i class="fa-solid fa-envelope"></i><a href=""> gowri12185@gmail.com</a>
             </div>
             <div class="navbar-item">
-                <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar 6th street , Theni - Allinagram</span>
+                <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar ,Theni, Tamil Nadu, 625531, India</span>
             </div>
         </div>
         <div class="navbar-social ">

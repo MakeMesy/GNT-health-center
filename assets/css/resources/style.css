@@ -568,7 +568,36 @@ margin-bottom: 3px;
 }
 .feedback-card-content p{
    color: var(--background-color);
+   min-height: 140px;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--primary-color);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    border: 3px solid var(--secondary-color);
+
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+    color: var(--white);
+}
+
+.mynewswiper-button-next,.mynewswiper-button-prev{
+  background: var(--background-color);
+}
+
 /* main gallery */
 #gallery{
    width: 100%;

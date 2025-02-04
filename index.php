@@ -39,7 +39,7 @@ include('./resources/conn.php')
   <div id="hero-section">
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide myslider-1" style="background: url(./assets/img/home/slider1.jpg) no-repeat center/cover;">
+        <div class="swiper-slide hero-swiper-slide myslider-1" style="background: url(./assets/img/home/slider1.jpg) no-repeat center/cover;">
           <div class="slider-content">
             <h2>Experience Holistic Healing</h2>
             <p>Discover natural therapies like Ayurveda, acupuncture, and yoga for a balanced, healthier lifestyle.</p>
@@ -48,7 +48,7 @@ include('./resources/conn.php')
             </div>
           </div>
         </div>
-        <div class="swiper-slide myslider-2" style="background: url(./assets/img/home/slider2.jpg) no-repeat center/cover;">
+        <div class="swiper-slide hero-swiper-slide myslider-2" style="background: url(./assets/img/home/slider2.jpg) no-repeat center/cover;">
           <div class="slider-content">
             <h2>Personalized Care for Every Need</h2>
             <p>Tailored treatment plans designed to address your unique health and wellness goals effectively.</p>
@@ -57,7 +57,7 @@ include('./resources/conn.php')
             </div>
           </div>
         </div>
-        <div class="swiper-slide myslider-3" style="background: url(./assets/img/home/slider3.jpg) no-repeat center/cover;">
+        <div class="swiper-slide hero-swiper-slide myslider-3" style="background: url(./assets/img/home/slider3.jpg) no-repeat center/cover;">
           <div class="slider-content">
             <h2>Expert Practitioners You Can Trust</h2>
             <p>Our skilled professionals combine traditional practices with modern techniques for optimal health outcomes.</p>
@@ -69,10 +69,10 @@ include('./resources/conn.php')
 
       </div>
       <div class="swiper-button-next-btn">
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-next swiper-button-next"></div>
       </div>
       <div class="swiper-button-prev-btn">
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev myswiper-button-prev"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
