@@ -32,6 +32,7 @@ include('../resources/conn.php')
     <li><a href="./adsbanner.php"><i class="fa fa-bullhorn"></i> <span>Ads Banner</span></a></li>
     <li><a href="./gallery.php"><i class="fa-brands fa-envira"></i> <span>Gallery</span></a></li>
     <li><a href="./testimonialadd.php"><i class="fas fa-comments"></i> <span>Testimonials</span></a></li>
+    <li><a href="./setting.php"><i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span></a></li>
   </ul>
 
   </div>

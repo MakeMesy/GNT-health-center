@@ -1,5 +1,7 @@
  @import url(./resource.css);
 
+
+
  /* navbar 1 */
  .navbar-container {
     width: 100%;
@@ -26,7 +28,7 @@
 
  .navbar-social {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
 
  }
 
@@ -618,6 +620,23 @@ margin-bottom: 3px;
    height: 100%;
    object-fit: cover;
    border-radius: 5px;
+}
+
+/* social media */
+.social_media_side{
+   position: fixed;
+   left: 0;
+   z-index: 99;
+   display: none;
+}
+.social_media_side_item{
+   background: var(--primary-color);
+   padding: 6px;
+   font-size: clamp(17px,2vw,20px);
+}
+.social_media_side_item a{
+   color: var(--white);
+   
 }
 
  @media screen and (max-width:768px) {

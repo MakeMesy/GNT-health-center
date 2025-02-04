@@ -15,6 +15,21 @@ if ($result_list->num_rows > 0) {
     echo "Treatment not found.";
 }
 
+$social_media_query = "SELECT icon,profile_link  FROM social_media";
+$stmt_social_media = $conn->prepare($social_media_query);
+$stmt_social_media->execute();
+$result_social_media = $stmt_social_media->get_result();
+$social_media=[];
+if ($result_social_media->num_rows > 0) {
+    while($social_media_list=$result_social_media->fetch_assoc()){
+        $social_media[]=$social_media_list;
+        
+    }
+
+} else {
+    echo "Social Media not found.";
+}
+
 ?>
 
 <div class="navbar-1">
@@ -30,13 +45,12 @@ if ($result_list->num_rows > 0) {
                 <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar ,Theni, Tamil Nadu, 625531, India</span>
             </div>
         </div>
-        <div class="navbar-social ">
+        <div class="navbar-social">
+            <?php foreach ( $social_media as $social_Link): ?>
             <div>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href="<?php echo $social_Link['profile_link'] ?>"><?php echo $social_Link['icon'] ?></a>
             </div>
-            <div>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
@@ -66,6 +80,7 @@ if ($result_list->num_rows > 0) {
 
                 </li>
                 <li><a href="./gallery.php">Gallery</a></li>
+                
             </ul>
         </div>
         <div class="nav-btn">
@@ -117,4 +132,27 @@ if ($result_list->num_rows > 0) {
             </div>
         </div>
     </nav>
+    
 </div>
+
+
+<div class="social_media_side">
+<?php foreach ( $social_media as $social_Link): ?>
+            <div class="social_media_side_item">
+                <a href="<?php echo $social_Link['profile_link'] ?>"><?php echo $social_Link['icon'] ?></a>
+            </div>
+            <?php endforeach; ?>
+</div>
+
+<script>
+    window.addEventListener("scroll", function () {
+        let formDiv = document.querySelector(".social_media_side");
+
+       if(window.screenY>200){
+        formDiv.style.display='block';
+       }else{
+        formDiv.style.display='none';
+
+       }
+    });
+</script>

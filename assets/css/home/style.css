@@ -446,8 +446,19 @@
 }
 
 
+/* marque */
+.marquee{
+    background: var(--primary-color);
+  
+}
 
-
+.marquee-con{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: clamp(17px,2vw,20px);
+    color: var(--white);
+}
 
 
 

@@ -35,6 +35,7 @@
                 <li>Contact</li>
                 <li>Our Services</li>
             </ul>
+            <span id="google_translate_element"></span>
         </div>
         <div >
             <h2>Pictures</h2>
@@ -48,6 +49,7 @@
             </div>
         </div>
         <div class="footer-detail">
+
         <div class="footer-content">
                    <div class="opening-hrs">
                    <h5>Opening Hours</h5>
@@ -75,5 +77,8 @@
    
 </div>
 <div class="copy-right">
-        <p>&copy;  <span><?php echo date('Y') ?></span>  <a href=""><?php echo $name ?></a> All Rights Reserved <br>Design and developed by <a href="">Mark Xplore</a></p>
+        <p>&copy;  <span><?php echo date('Y') ?></span>  <a href=""><?php echo $name ?></a> All Rights Reserved <br>Design and developed by <a href="">MakeMesy</a></p>
     </div>
+
+
+
