@@ -30,6 +30,7 @@ include('../resources/conn.php')
     <li><a href="./appointments.php"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
     <li><a href="./treatments.php"><i class="fas fa-procedures"></i> <span>Treatments</span></a></li>
     <li><a href="./adsbanner.php"><i class="fa fa-bullhorn"></i> <span>Ads Banner</span></a></li>
+    <li><a href="./gallery.php"><i class="fa-brands fa-envira"></i> <span>Gallery</span></a></li>
   </ul>
 
   </div>
