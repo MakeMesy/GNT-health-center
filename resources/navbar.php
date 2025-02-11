@@ -79,6 +79,7 @@ if ($result_social_media->num_rows > 0) {
                     </ul>
 
                 </li>
+                <li><a href="./courses.php">Courses</a></li>
                 <li><a href="./gallery.php">Gallery</a></li>
                 
             </ul>
@@ -112,6 +113,7 @@ if ($result_social_media->num_rows > 0) {
                     ?>
                         </ul>
                     </li>
+                    <li><a href="./courses.php">Courses</a></li>
                     <li><a href="./gallery.php">Gallery</a></li>
 
                 </ul>
