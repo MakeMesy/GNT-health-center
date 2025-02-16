@@ -18,12 +18,11 @@
                 <p >Providing holistic healing through natural therapies, Ayurveda, yoga, meditation, and advanced wellness techniques for a healthier lifestyle</p>
             </div>
             <div class="footer-social">
-                <div>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <div>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                </div>
+            <?php foreach ( $social_media as $social_Link): ?>
+            <div >
+                <a href="<?php echo $social_Link['profile_link'] ?>"><?php echo $social_Link['icon'] ?></a>
+            </div>
+            <?php endforeach; ?>
             </div>
         </div>
         <div class="footer-links">
@@ -64,7 +63,7 @@
         <div class="footer-item">
                 <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar 6th street, Theni - Allinagram</span>
                 <div class="footer-item">
-                <i class="fa-solid fa-envelope"></i><a href=""> gowri12185@gmail.com</a>
+                <i class="fa-solid fa-envelope"></i><a href=""> gnthealthcare999@gmail.com</a>
             </div>
             </div>
         <div class="footer-item ">
@@ -77,7 +76,7 @@
    
 </div>
 <div class="copy-right">
-        <p>&copy;  <span><?php echo date('Y') ?></span>  <a href=""><?php echo $name ?></a> All Rights Reserved <br>Design and developed by <a href="">MakeMesy</a></p>
+        <p>&copy;  <span><?php echo date('Y') ?></span>  <a href=""><?php echo $name ?></a> All Rights Reserved <br>Design and developed by <a href="https://www.makemesy.com/">MakeMesy</a></p>
     </div>
 
 

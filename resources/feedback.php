@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
 <script>
   var swiper = new Swiper('#feedback-slider', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 50,
     autoplay: {
       delay: 2500,
@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
         slidesPerView: 4,
       },
       768: {
-        slidesPerView: 1,
+        slidesPerView: 4,
       }
     }
   });

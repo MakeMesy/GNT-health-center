@@ -33,6 +33,7 @@ include('../resources/conn.php')
     <li><a href="./gallery.php"><i class="fa-brands fa-envira"></i> <span>Gallery</span></a></li>
     <li><a href="./testimonialadd.php"><i class="fas fa-comments"></i> <span>Testimonials</span></a></li>
     <li><a href="./setting.php"><i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span></a></li>
+    <li><a href="./teammembers.php"><i class="fa-solid fa-user"></i><span>Team Members</span></a></li>
   </ul>
 
   </div>

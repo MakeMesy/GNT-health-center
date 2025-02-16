@@ -39,7 +39,7 @@ if ($result_social_media->num_rows > 0) {
                 <i class="fa-solid fa-phone"></i> <span> +91 8667832990</span>
             </div>
             <div class="navbar-item">
-                <i class="fa-solid fa-envelope"></i><a href=""> gowri12185@gmail.com</a>
+                <i class="fa-solid fa-envelope"></i><a href=""> gnthealthcare999@gmail.com</a>
             </div>
             <div class="navbar-item">
                 <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar ,Theni, Tamil Nadu, 625531, India</span>
@@ -125,7 +125,7 @@ if ($result_social_media->num_rows > 0) {
                         <i class="fa-solid fa-phone"></i> <span> +91 8667832990</span>
                     </div>
                     <div class="mobile-navbar-item">
-                        <i class="fa-solid fa-envelope"></i><a href=""> gowri12185@gmail.com</a>
+                        <i class="fa-solid fa-envelope"></i><a href=""> gnthealthcare999@gmail.com</a>
                     </div>
                     <div class="mobile-navbar-item">
                         <i class="fa-solid fa-location-dot"></i><span> Rathinam Nagar 6th street , Theni - Allinagram</span>
