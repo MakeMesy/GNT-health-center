@@ -272,6 +272,57 @@ include('./resources/conn.php');
     </div>
   </section>
 
+  <!-- top services -->
+
+  <?php
+
+  $services_query = "SELECT * FROM  main_treatments ";
+  $stmt_for_services = $conn->prepare($services_query);
+  $stmt_for_services->execute();
+  $services_list = [];
+  $services_result = $stmt_for_services->get_result();
+  if ($services_result->num_rows > 0) {
+
+    while ($row = $services_result->fetch_assoc()) {
+      $services_list[] = $row;
+    }
+  } else {
+    echo "No services found";
+  }
+
+  ?>
+  <div id="top-services">
+    <div class="top-services">
+      <div class="top-services-heading">
+        <h2>Holistic Wellness Solutions</h2>
+        <h4>Natural Healing for a Healthier, Happier You</h4>
+      </div>
+      <div class="top-services-content">
+        <div class="top-services-content-list">
+          <?php foreach ($services_list as $service): ?>
+
+            <div class="services-list">
+              <div class="services-list-img">
+                <img  src="./assets/img/services/<?= htmlspecialchars($service['image_icon']); ?>" alt="<?= htmlspecialchars($service['name']); ?>">
+              </div>
+              <div class="services-list-con">
+                <h3><?= htmlspecialchars($service['name']); ?></h3>
+                <p><?= htmlspecialchars($service['description']); ?></p>
+              </div>
+              <div class="services-list-price">
+                <p><?= htmlspecialchars($service['price']); ?></p>
+
+              </div>
+            </div>
+
+          <?php endforeach; ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- QUOTE -->
   <div id="quote-main-section">
