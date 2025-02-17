@@ -22,7 +22,6 @@ include('./resources/conn.php')
   
   <!-- custom css -->
   <link rel="stylesheet" href="./assets/css/resources/style.css">
-  <link rel="stylesheet" href="./assets/css/resources/resource.css">
   <link rel="stylesheet" href="./assets/css/home/style.css">
 
   
@@ -72,7 +71,7 @@ include('./resources/conn.php')
 
       </div>
       <div class="swiper-button-next-btn">
-        <div class="swiper-button-next swiper-button-next"></div>
+        <div class="swiper-button-next myswiper-button-next"></div>
       </div>
       <div class="swiper-button-prev-btn">
         <div class="swiper-button-prev myswiper-button-prev"></div>

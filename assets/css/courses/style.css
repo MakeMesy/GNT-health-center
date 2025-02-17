@@ -1,0 +1,72 @@
+@import url(../resources/resource.css);
+
+
+#unqiue-thinks {
+
+    margin-top: 3rem;
+
+}
+
+.unique-thinks {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.unique-thinks-heading h2 {
+    font-size: clamp(38px, 3vw, 48px);
+    font-weight: 700;
+    color: var(--primary-color);
+
+
+}
+
+.unique-thinks-content {
+    display: flex;
+    margin-top: 3rem;
+    gap: 3rem;
+    background: var(--background-color);
+
+}
+
+.unique-main-points {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.unique-point-heading {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.unique-point-heading h2 {
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+
+}
+
+.unique-point-heading h4 {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 700;
+    color: var(--white);
+
+}
+
+.unique-points ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.unique-points ul li {
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--white);
+
+}

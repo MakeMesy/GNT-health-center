@@ -49,9 +49,10 @@ function safe_htmlspecialchars($value)
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- custom css -->
-    <link rel="stylesheet" href="./assets/css/resources/resource.css">
+
     <link rel="stylesheet" href="./assets/css/resources/style.css">
     <link rel="stylesheet" href="./assets/css/treatments/style.css">
 
@@ -104,7 +105,18 @@ function safe_htmlspecialchars($value)
         <div class="therapies">
 
             <div class="therapies-heading mb-5">
-                <h2>Our Specialized Therapies</h2>
+            <?php 
+
+                       if( strtolower($url_name)=="karla-kattai"){
+                             echo "<h2>Our Karla Kattai types</h2>";
+                       }else{
+                        echo "<h2>Our Specialized Therapies</h2>";
+                       }
+                       
+
+
+                    ?>
+                
                 <h4>
                     Tailored treatments for your holistic well-being
                 </h4>
@@ -114,11 +126,11 @@ function safe_htmlspecialchars($value)
                 if (isset($therapie_list['therapies']) && is_array($therapie_list['therapies'])) {
                     foreach ($therapie_list['therapies'] as $therapie) {
                         echo "<div class='list-of-therapies'>";
-                        echo "<div class='therapies-img' >
+                        echo "<div class='therapies-img ' >
                    <img src='./assets/img/treatments/" . safe_htmlspecialchars($therapie['image']) . "' />
                 </div>";
 
-                        echo "<h2>" . nl2br(safe_htmlspecialchars($therapie['name'])) . "</h2>";
+                        echo "<h2 class='text-center'>" . nl2br(safe_htmlspecialchars($therapie['name'])) . "</h2>";
 
                         echo "</div>";
                     }
@@ -233,6 +245,7 @@ function safe_htmlspecialchars($value)
 
     <!-- feedback -->
     <?php include('./resources/feedback.php') ?>
+
     <?php include('./resources/form.php') ?>
 
     <!-- footer -->
