@@ -70,3 +70,114 @@
     color: var(--white);
 
 }
+
+
+
+/*featured courses  */
+
+#featured-courses {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+
+}
+
+.features-courses {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.features-courses-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.features-courses-heading h2 {
+    font-size: clamp(28px, 3vw, 48px);
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.features-courses-heading h4 {
+    font-size: clamp(20px, 2vw, 28px);
+    color: var(--background-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.features-course-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.features-course-point-img img {
+    width: 380px;
+    height: 240px;
+}
+
+.features-course-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    height: 540px;
+    border: 3px solid var(--primary-color);
+    background: var(--bglight-color);
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+.features-course-point:hover {
+    transform: scale(1.02);
+}
+
+.features-course-con {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features-course-con h2 {
+    font-size: clamp(20px, vw, 24px);
+    color: var(--primary-color);
+    font-weight: bold;
+    min-height: 50px;
+    overflow: hidden;
+}
+
+.features-course-con .description {
+    min-height: 70px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.features-course-con .price {
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: bold;
+}
+
+.features-course-con button {
+    padding: 4px 20px;
+    border-radius: 4px;
+    border: 2px solid var(--background-color);
+    background: var(--secondary-color);
+    font-size: clamp(18px, 2vw, 20px);
+    color: var(--background-color);
+    font-weight: 500;
+}
+
+@media screen and (max-width:768px) {
+    .features-course-content{
+        grid-template-columns: repeat(1, 1fr);
+
+    }.unique-thinks-content{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+

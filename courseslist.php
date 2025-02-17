@@ -73,6 +73,67 @@ include('./resources/conn.php')
   </div>
 
 
+  <?php
+
+  $featured_query = "SELECT * FROM  featured_courses ";
+  $featured_query = $conn->prepare($featured_query);
+  $featured_query->execute();
+  $featured_cour_list = [];
+  $featured_cour_lists = $featured_query->get_result();
+  if ($featured_cour_lists->num_rows > 0) {
+
+    while ($row = $featured_cour_lists->fetch_assoc()) {
+      $featured_cour_list[] = $row;
+    }
+  } else {
+    echo "No services found";
+  }
+
+  ?>
+
+  <!-- featured courses -->
+  <div id="featured-courses">
+    <div class="features-courses">
+      <div class="features-courses-heading">
+        <h2>Top Notch Courses</h2>
+        <h4>Unlock Your Potential – Learn, Grow, and Master with Our Courses</h4>
+      </div>
+      <div class="features-course-content">
+        <?php foreach ($featured_cour_list as $featured_course): ?>
+          <div class="features-course-point">
+            <div class="features-course-point-img">
+              <img src="./assets/img/courses/<?php echo $featured_course['image']; ?>" alt="">
+            </div>
+
+            <div class="features-course-con">
+              <h2><?php echo $featured_course['name']; ?></h2>
+              <p class="description"><?php echo $featured_course['description']; ?></p>
+              <p class="price">&#8377;<?php echo $featured_course['price']; ?></p>
+              <a href="<?php echo $featured_course['link']; ?>"><button>Visit</button></a>
+
+            </div>
+
+
+          </div>
+        <?php endforeach ?>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- team info -->
+  <?php include('./resources/teaminfo.php') ?>
+
+
+  <!-- my courses -->
+  <?php include('./resources/courses.php') ?>
+
+
+  <!-- feedback -->
   <?php include('./resources/feedback.php') ?>
 
   <!-- footer -->

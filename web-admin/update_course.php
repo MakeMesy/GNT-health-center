@@ -1,6 +1,12 @@
 <?php
 
-include('../resources/conn.php')
+include('../resources/conn.php');
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+
+
+}
 
 ?>
 
@@ -24,20 +30,6 @@ include('../resources/conn.php')
 <body>
 
   <?php include('./navbar.php') ?>
-
-<div class="main-section">
-  <ul>
-    <li><a href="./appointments.php"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
-    <li><a href="./treatments.php"><i class="fas fa-procedures"></i> <span>Treatments</span></a></li>
-    <li><a href="./adsbanner.php"><i class="fa fa-bullhorn"></i> <span>Ads Banner</span></a></li>
-    <li><a href="./gallery.php"><i class="fa-brands fa-envira"></i> <span>Gallery</span></a></li>
-    <li><a href="./testimonialadd.php"><i class="fas fa-comments"></i> <span>Testimonials</span></a></li>
-    <li><a href="./setting.php"><i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span></a></li>
-    <li><a href="./teammembers.php"><i class="fa-solid fa-user"></i><span>Team Members</span></a></li>
-    <li><a href="./courses.php"><i class="fa-solid fa-user"></i><span>Courses</span></a></li>
-  </ul>
-
-  </div>
 
 
 
