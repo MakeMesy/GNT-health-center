@@ -1,21 +1,33 @@
-
 <?php
 
-$members_query = "SELECT * FROM  team_members ";
+$members_query = "SELECT `name`, `designation`, `education`, `description`, `image` FROM `team_members`";
 $members_query = $conn->prepare($members_query);
 $members_query->execute();
-$members_list = [];
-$members_lists = $members_query->get_result();
-if ($members_lists->num_rows > 0) {
 
-  while ($row = $members_lists->fetch_assoc()) {
-    $members_list[] = $row;
-  }
-} else {
-  echo "No services found";
+// Bind the result columns to PHP variables
+$members_query->bind_result($name, $designation, $education,$description,$image); // Adjust the variables based on your table structure
+
+$members_list = [];
+while ($members_query->fetch()) {
+    $members_list[] = [
+        "name" => $name,
+        "designation" => $designation,
+        "image" => $image,
+        "education"=>$education,
+        "description"=>$description
+
+    ];
 }
 
+// Close the prepared statement
+$members_query->close();
+
+if (empty($members_list)) {
+    echo "No services found";
+}
 ?>
+
+
   <!-- Team info -->
   <div id="team-info">
     <div class="team-info-style-img">

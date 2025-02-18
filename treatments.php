@@ -4,37 +4,65 @@ include('./resources/conn.php');
 $treatment_query = "SELECT url_name FROM treatments";
 $stmt_for_treatment = $conn->prepare($treatment_query);
 $stmt_for_treatment->execute();
-$result = $stmt_for_treatment->get_result();
+$stmt_for_treatment->bind_result($url_name);
 
 $treatments = [];
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $treatments[] = $row['url_name'];
-    }
+
+while ($stmt_for_treatment->fetch()) {
+    $treatments[] = $url_name;
 }
+
+$stmt_for_treatment->close();
+
+
 if (isset($_GET['treatment']) && in_array($_GET['treatment'], $treatments)) {
     $url_name = $_GET['treatment'];
-
-    $treatment_query = "SELECT * FROM treatments WHERE url_name = ?";
+    $treatment_query = "SELECT id, url_name, name, slogan, about, benefits, therapies, images, thumbnail, created_at, herosection, herosection_title, herosection_des, about_video, video_link, video_title FROM treatments WHERE url_name = ?";
     $stmt_for_treatment = $conn->prepare($treatment_query);
-    $stmt_for_treatment->bind_param("s", $url_name);
+    $stmt_for_treatment->bind_param("s", $url_name); 
     $stmt_for_treatment->execute();
-    $result = $stmt_for_treatment->get_result();
 
-    if ($result->num_rows > 0) {
-        $treatment_details = $result->fetch_assoc();
+    $stmt_for_treatment->bind_result($id, $url_name, $name, $slogan, $about, $benefits, $therapies, $images, $thumbnail, $created_at, $herosection, $herosection_title, $herosection_des, $about_video, $video_link, $video_title);
+
+    $treatment_details = [];
+    if ($stmt_for_treatment->fetch()) {
+
+        $treatment_details = [
+            "id" => $id,
+            "url_name" => $url_name,
+            "name" => $name,
+            "slogan" => $slogan,
+            "about" => $about,
+            "benefits" => $benefits,
+            "therapies" => $therapies,
+            "images" => $images,
+            "thumbnail" => $thumbnail,
+            "created_at" => $created_at,
+            "herosection" => $herosection,
+            "herosection_title" => $herosection_title,
+            "herosection_des" => $herosection_des,
+            "about_video" => $about_video,
+            "video_link" => $video_link,
+            "video_title" => $video_title
+        ];
     } else {
         echo "Treatment not found.";
     }
+
+    $stmt_for_treatment->close();
 } else {
     header("Location: ./");
+    exit();
 }
+
 
 function safe_htmlspecialchars($value)
 {
-    return htmlspecialchars($value !== Null ? $value : '', ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8');
 }
 ?>
+
+
 
 
 <!DOCTYPE html>

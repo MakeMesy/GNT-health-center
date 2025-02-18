@@ -17,7 +17,7 @@ include('./resources/conn.php');
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- custom css -->
-  <link rel="stylesheet" href="./assets/css/resources/resource.css">
+
   <link rel="stylesheet" href="./assets/css/resources/style.css">
   <link rel="stylesheet" href="./assets/css/service/style.css">
 
@@ -274,23 +274,28 @@ include('./resources/conn.php');
 
   <!-- top services -->
 
-  <?php
+ <?php
 
-  $services_query = "SELECT * FROM  main_treatments ";
-  $stmt_for_services = $conn->prepare($services_query);
-  $stmt_for_services->execute();
-  $services_list = [];
-  $services_result = $stmt_for_services->get_result();
-  if ($services_result->num_rows > 0) {
-
-    while ($row = $services_result->fetch_assoc()) {
-      $services_list[] = $row;
-    }
-  } else {
+$services_query = "SELECT `name`, `description`, `price`, `image_icon` FROM `main_treatments`";
+$stmt_for_services = $conn->prepare($services_query);
+$stmt_for_services->execute();
+$stmt_for_services->bind_result($name, $description, $price, $image_icon);
+$services_list = [];
+while ($stmt_for_services->fetch()) {
+    $services_list[] = [
+        'name' => $name,
+        'description' => $description,
+        'price' => $price,
+        'image_icon' => $image_icon
+    ];
+}
+$stmt_for_services->close();
+if (empty($services_list)) {
     echo "No services found";
-  }
+}
 
-  ?>
+?>
+
   <div id="top-services">
     <div class="top-services">
       <div class="top-services-heading">

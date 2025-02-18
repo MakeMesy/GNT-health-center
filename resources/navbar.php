@@ -1,32 +1,40 @@
 <?php
 
-$treatment_list_nav = "SELECT url_name,name FROM treatments";
+$treatment_list_nav = "SELECT url_name, name FROM treatments";
 $stmt_for_treatment_list_nav = $conn->prepare($treatment_list_nav);
 $stmt_for_treatment_list_nav->execute();
-$result_list = $stmt_for_treatment_list_nav->get_result();
-$treatments_nav=[];
-if ($result_list->num_rows > 0) {
-    while($treatment_list=$result_list->fetch_assoc()){
-        $treatments_nav[]=$treatment_list;
-        
-    }
+$stmt_for_treatment_list_nav->bind_result($url_name, $name);
+$treatments_nav = [];
+while ($stmt_for_treatment_list_nav->fetch()) {
+    $treatments_nav[] = [
+        "url_name" => $url_name,
+        "name" => $name
+    ];
+}
+$stmt_for_treatment_list_nav->close();
 
-} else {
+if (empty($treatments_nav)) {
     echo "Treatment not found.";
 }
 
-$social_media_query = "SELECT icon,profile_link  FROM social_media";
+// social media
+$social_media_query = "SELECT icon, profile_link FROM social_media";
 $stmt_social_media = $conn->prepare($social_media_query);
 $stmt_social_media->execute();
-$result_social_media = $stmt_social_media->get_result();
-$social_media=[];
-if ($result_social_media->num_rows > 0) {
-    while($social_media_list=$result_social_media->fetch_assoc()){
-        $social_media[]=$social_media_list;
-        
-    }
 
-} else {
+$stmt_social_media->bind_result($icon, $profile_link);
+
+$social_media = [];
+while ($stmt_social_media->fetch()) {
+    $social_media[] = [
+        "icon" => $icon,
+        "profile_link" => $profile_link
+    ];
+}
+
+$stmt_social_media->close();
+
+if (empty($social_media)) {
     echo "Social Media not found.";
 }
 

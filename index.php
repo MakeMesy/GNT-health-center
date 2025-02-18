@@ -1,10 +1,8 @@
 <?php
 
-include('./resources/conn.php')
+include('./resources/conn.php');
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +32,7 @@ include('./resources/conn.php')
 
   <!-- navbar -->
 
-  <?php include('./resources/navbar.php') ?>
+  <?php include('./resources/navbar.php'); ?>
 
   <!-- hero section -->
 
@@ -83,26 +81,20 @@ include('./resources/conn.php')
 <div class="marquee-con">
 <marquee behavior="smooth" direction="right">
 <?php
-
-$marquee_query = "SELECT *  FROM marquee";
+$marquee_query = "SELECT marquee_text FROM marquee ";  
 $stmt_marquee = $conn->prepare($marquee_query);
 $stmt_marquee->execute();
-$result_marquee = $stmt_marquee->get_result();
-$marquee_con=[];
-if ($result_marquee->num_rows > 0) {
-    while($marquee_list=$result_marquee->fetch_assoc()){
-        $marquee_con[]=$marquee_list;
-        foreach($marquee_con as $marquee){
-          echo $marquee['marquee_text'];
-        }
-    }
-
+$stmt_marquee->bind_result($marquee_text);
+if ($stmt_marquee->fetch()) {
+    echo $marquee_text;
 } else {
-    echo "Social Media not found.";
+    echo "No marquee content found.";
 }
 
+$stmt_marquee->close();
+?>
 
-?></marquee>
+</marquee>
 </div>
   </div>
 

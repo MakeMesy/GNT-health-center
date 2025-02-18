@@ -96,7 +96,7 @@
 }
 
 .features-courses-heading h2 {
-    font-size: clamp(28px, 3vw, 48px);
+    font-size: clamp(38px, 3vw, 48px);
     color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 1rem;
@@ -142,7 +142,7 @@
 }
 
 .features-course-con h2 {
-    font-size: clamp(20px, vw, 24px);
+    font-size: clamp(28px, 2vw, 24px);
     color: var(--primary-color);
     font-weight: bold;
     min-height: 50px;
