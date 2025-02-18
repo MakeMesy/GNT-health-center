@@ -8,9 +8,9 @@ $name = "GNT Research Health Care Center";
 // $db = 'gnt';
 
 $host = "localhost";
-$user = "vattava2_health"; 
+$user = "vattava2_gnt"; 
 $pass = "nbv@2022"; 
-$db = "vattava2_health";
+$db = "vattava2_gnt";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
