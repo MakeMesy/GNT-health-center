@@ -808,7 +808,7 @@ color: var(--background-color);
 .our-courses-card-content .description{
 font-size: clamp(18px,2vw,18px);
 font-weight: 500;
-min-height: 70px;
+height: 80px;
 overflow: hidden;
    
 }

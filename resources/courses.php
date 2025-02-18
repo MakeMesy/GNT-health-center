@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
             <p class="text-center"><?php echo $course['course_name']; ?></p>
             <span class="description" ><?php echo $course['description']; ?></span>
             <span class="price">&#8377;<?php echo $course['price']; ?></span>
-          <a href=""><button>Explore</button></a>
+          <a href="./courses.php?course=<?php echo $course['url_name']; ?>"><button>Explore</button></a>
           </div>
         </div>
   <?php endforeach; ?>

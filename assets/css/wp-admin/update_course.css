@@ -1,0 +1,210 @@
+@import url(../resources/resource.css);
+
+
+
+
+#courses-main-section {
+    padding: 40px 10%;
+    background-color: var(--bg-light);
+}
+
+.courses-main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course-about {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.course-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.course-about-con .course-des input{
+    width: 280px;
+}
+.course-about-con {
+    flex: 2;
+    padding: 20px;
+}
+.course-about-con input{
+height: 40px;
+padding: 10px;
+}
+.course-about-con h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+}
+input[name="coverage"],input[name="requirement"]{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 5px;
+
+}
+
+.course-about-con p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+.con-1 strong {
+    color: var(--primary-color);
+}
+
+
+.course-in-con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-coverage, .course_require {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-coverage h2,
+.course_require h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.course-coverage ul,
+.course_require ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-coverage li,
+.course_require li {
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 5px 0;
+}
+
+
+.course_image {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.course_image h2 {
+    color: var(--primary-color);
+}
+
+.list_image {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.list_image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+}
+
+/* Course Main Detail Section */
+.course-main-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.address_detail, .contact_detail, .terms_and_condition, .price_amout {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.address_detail h2,
+.contact_detail h2,
+.terms_and_condition h2,
+.price_amout h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.address_detail p,
+.contact_detail p,
+.terms_and_condition p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 8px 0;
+}
+
+.address_detail a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.address_detail a:hover {
+    text-decoration: underline;
+}
+
+/* Price & Button */
+.price_amout h2 {
+    font-size: 24px;
+}
+
+.price_amout button {
+    background: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.price_amout button:hover {
+    background: darkorange;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-about, .course-in-con, .course-main-detail {
+        flex-direction: column;
+    }
+
+    .course-image {
+        max-width: 100%;
+    }
+
+    .list_image img {
+        width: 100px;
+        height: 100px;
+    }
+}

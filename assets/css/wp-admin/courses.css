@@ -84,7 +84,9 @@
   .our-courses-card:hover {
     transform: translateY(-5px);
   }
-  
+  .our-courses-card-img{
+  flex-basis: 50%;
+  }
 
   .our-courses-card-img img {
     width: 100%;
@@ -96,6 +98,7 @@
   .our-courses-card-content {
     padding: 15px;
     text-align: center;
+    width: 100%;
   }
   
   .our-courses-card-content p {

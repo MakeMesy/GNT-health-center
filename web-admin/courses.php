@@ -47,7 +47,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             exit();
         }
     }
-}
+    elseif ( $FormName=="delete_course" ) {
+            $course_id=$_POST['course_id'];
+            $stmt = $conn->prepare("DELETE from courses_list where id= ?");
+            $stmt->bind_param("s", $course_id);
+            $stmt->execute();
+            $stmt->close();
+  
+            header('Location: ./courses.php');
+            exit();
+        } else {
+            echo '<script>alert("error in delete")</script>';
+        }
+    }
 
 ?>
 
@@ -147,8 +159,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     ?>
 
 
+
     <section id="our-courses">
-        <div class="our-courses-content-main " id="our-courses-slider">
+
+    <h2>Add Courses</h2>
+<a href="./add_courses.php"><button class="btn btn-secondary">Add</button></a>
+        <div class="our-courses-content-main mt-2 " id="our-courses-slider">
 
             <div class="courses-content-main">
                 <?php foreach ($course_list as $course): ?>
@@ -161,7 +177,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             <span class="description"><?php echo $course['description']; ?></span>
                             <span class="price">&#8377;<?php echo $course['price']; ?></span>
                             <a href="./update_course.php?id=<?php echo $course['id']; ?>"><button>Update</button></a>
-                            <a href=""><button>Delete</button></a>
+                            <form action="./courses.php" method="post" class="mt-2">
+                                <input type="hidden" value="delete_course" name="FormName">
+                         <input type="hidden" value="<?php echo $course['id']; ?>" name="course_id">
+                                <button type="submit" class="update-icon w-25">Delete</button>
+                            </form>
                         </div>
                     </div>
                 <?php endforeach; ?>
